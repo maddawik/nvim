@@ -8,7 +8,7 @@ local filter_show = function()
   return true
 end
 local filter_hide = function(fs_entry)
-  return not vim.startswith(fs_entry.name, ".")
+  return not vim.startswith(fs_entry.name, ".git")
 end
 
 return {
