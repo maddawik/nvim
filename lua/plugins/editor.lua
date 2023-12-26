@@ -21,17 +21,15 @@ return {
     },
   },
 
-  -- Trim trailing whitespace
+  -- Trim whitespace
   {
-    "echasnovski/mini.trailspace",
-    config = true,
-    event = {
-      "BufReadPre",
-      "BufNewFile",
+    "cappyzawa/trim.nvim",
+    opts = {
+      trim_on_write = false,
     },
     keys = {
-      { "<leader>ft", "<cmd>lua MiniTrailspace.trim()<cr>", desc = "Trim whitespace" },
-      { "<leader>fT", "<cmd>lua MiniTrailspace.trim_last_lines()<cr>", desc = "Trim extra lines" },
+      { "<leader>ft", "<cmd>Trim<cr>", desc = "Trim whitespace" },
+      { "<leader>fT", "<cmd>TrimToggle<cr>", desc = "Toggle auto trim whitespace" },
     },
   },
 

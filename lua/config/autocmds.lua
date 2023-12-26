@@ -22,12 +22,3 @@ create_autocmd("FileType", {
     vim.b.autoformat = false
   end,
 })
-
-create_autocmd("FileType", {
-  desc = "Disable trailspace for certain buffers",
-  group = augroup("whitespace"),
-  pattern = { "lazy", "dashboard" },
-  callback = function()
-    MiniTrailspace.unhighlight()
-  end,
-})
