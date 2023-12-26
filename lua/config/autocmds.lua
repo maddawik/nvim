@@ -4,6 +4,7 @@ end
 local create_autocmd = vim.api.nvim_create_autocmd
 
 create_autocmd("FileType", {
+  desc = "Change indenting for fish files",
   group = augroup("indent"),
   pattern = { "fish" },
   callback = function()
@@ -11,23 +12,22 @@ create_autocmd("FileType", {
     vim.opt.softtabstop = 4
     vim.opt.expandtab = true
   end,
-  desc = "Change indenting for fish files",
 })
 
 create_autocmd("FileType", {
+  desc = "Disable autoformat for terraform files",
   group = augroup("autoformat"),
   pattern = { "terraform", "terraform-vars" },
   callback = function()
     vim.b.autoformat = false
   end,
-  desc = "Disable autoformat for terraform files",
 })
 
 create_autocmd("FileType", {
+  desc = "Disable trailspace for certain buffers",
   group = augroup("whitespace"),
-  pattern = { "lazy" },
+  pattern = { "lazy", "dashboard" },
   callback = function()
     MiniTrailspace.unhighlight()
   end,
-  desc = "Disable trailspace for certain buffers",
 })
