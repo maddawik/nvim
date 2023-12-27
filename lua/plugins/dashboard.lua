@@ -6,6 +6,7 @@ return {
       week_header = {
         enable = true,
       },
+      mru = { limit = 6 },
       footer = {},
       shortcut = {
         {
