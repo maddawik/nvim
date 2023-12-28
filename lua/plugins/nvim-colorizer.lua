@@ -6,6 +6,7 @@ return {
     filetypes = {
       html = { mode = "foreground" },
       "css",
+      "go",
       "javascript",
       "typescript",
       lua = { names = false },
