@@ -9,6 +9,10 @@ return {
     templates = {
       subdir = "templates",
     },
+    notes_subdir = "notes",
+    daily_notes = {
+      folder = "notes/dailies",
+    },
     workspaces = {
       {
         name = "personal",
