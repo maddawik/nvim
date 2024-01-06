@@ -1,6 +1,6 @@
 return {
   "epwalsh/obsidian.nvim",
-  version = "*",
+  -- version = "*",
   event = {
     "BufReadPre " .. vim.fn.expand("~") .. "/vaults/**.md",
     "BufNewFile " .. vim.fn.expand("~") .. "/vaults/**.md",
