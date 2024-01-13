@@ -5,7 +5,7 @@ return {
     show_help = false,
     window = {
       -- winblend = 10,
-      border = "single", -- none, single, double, shadow
+      border = "rounded", -- none, single, double, shadow
     },
   },
 }
