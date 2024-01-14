@@ -2,6 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   dependencies = {
     { "mtoohey31/cmp-fish", ft = "fish" },
+    { "andersevenrud/cmp-tmux" },
   },
   opts = function(_, opts)
     local cmp = require("cmp")
@@ -14,6 +15,7 @@ return {
     })
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
       { name = "fish" },
+      { name = "tmux" },
     }))
   end,
 }
