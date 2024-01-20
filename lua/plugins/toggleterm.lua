@@ -3,7 +3,7 @@ return {
   version = "*",
   opts = {},
   init = function()
-    vim.keymap.set("t", "<C-\\>", [[<Cmd>ToggleTerm<CR>]])
+    vim.keymap.set("t", "<C-\\>", "<Cmd>ToggleTerm<CR>")
   end,
   keys = {
     {

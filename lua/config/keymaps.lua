@@ -1,11 +1,6 @@
 local keymap = vim.keymap
--- Exit insert and terminal mode with jk
+-- Exit insert mode with jk
 keymap.set("i", "jk", "<ESC>")
--- Better terminal navigation
-keymap.set("t", "<C-h>", [[<cmd>wincmd h<CR>]])
-keymap.set("t", "<C-j>", [[<cmd>wincmd j<CR>]])
-keymap.set("t", "<C-k>", [[<cmd>wincmd k<CR>]])
-keymap.set("t", "<C-l>", [[<cmd>wincmd l<CR>]])
 -- Better window navigation
 keymap.set({ "n", "t" }, "<C-h>", "<cmd>SmartCursorMoveLeft<CR>")
 keymap.set({ "n", "t" }, "<C-j>", "<cmd>SmartCursorMoveDown<CR>")

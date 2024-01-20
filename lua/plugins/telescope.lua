@@ -17,6 +17,8 @@ return {
       },
     },
     keys = {
+      -- disable git status
+      { "<leader>gs", false },
       -- add a keymap to browse plugin files
       {
         "<leader>fC",
