@@ -19,7 +19,11 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      keys = { { "<leader>ft", false }, { "<leader>fT", false } }, -- disable terminal keymaps
+      keys = {
+        -- disable terminal keymaps
+        { "<leader>ft", false },
+        { "<leader>fT", false },
+      },
     },
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.editor.mini-files" },

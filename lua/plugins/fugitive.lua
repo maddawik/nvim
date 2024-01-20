@@ -2,7 +2,7 @@ return {
   "tpope/vim-fugitive",
   cmd = "Git",
   keys = {
-    { "<leader>gs", "<cmd>vertical Git<cr>", desc = "status" },
+    { "<leader>gf", "<Cmd>vertical Git<CR>", desc = "Fugitive" },
   },
   dependencies = {
     "tpope/vim-rhubarb",
