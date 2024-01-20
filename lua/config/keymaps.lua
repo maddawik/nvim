@@ -13,6 +13,6 @@ keymap.set({ "n", "t" }, "<C-Left>", "<cmd>SmartResizeLeft<CR>")
 keymap.set({ "n", "t" }, "<C-Right>", "<cmd>SmartResizeRight<CR>")
 
 keymap.set("n", "<leader>uc", function()
-  local next_state = vim.o.conceallevel > 0 and vim.o.conceallevel - 1 or 2
-  require("lazyvim.util").toggle("conceallevel", false, { vim.o.conceallevel, next_state % 3 })
+  local next_state = vim.o.conceallevel > 0 and vim.o.conceallevel - 1 or 3
+  require("lazyvim.util").toggle("conceallevel", false, { vim.o.conceallevel, next_state % 4 })
 end, { desc = "Toggle Conceal" })
