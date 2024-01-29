@@ -53,7 +53,7 @@ return {
     },
   },
 
-  -- Smooth scrolling
+  -- Cursor tail
   {
     "gen740/SmoothCursor.nvim",
     event = {
@@ -64,12 +64,12 @@ return {
       disable_float_win = true,
       fancy = {
         enable = true,
-        head = { cursor = "▷", texthl = "@lsp.type.type", linehl = nil },
+        head = { cursor = "▷", texthl = "@function", linehl = nil },
         body = {
-          { cursor = "󰝥", texthl = "@lsp.type.selfKeyword" },
-          { cursor = "●", texthl = "@lsp.type.enum" },
-          { cursor = "•", texthl = "@lsp.type.property" },
-          { cursor = ".", texthl = "@lsp.type.macro" },
+          { cursor = "󰝥" },
+          { cursor = "●" },
+          { cursor = "•" },
+          { cursor = "." },
         },
       },
     },
