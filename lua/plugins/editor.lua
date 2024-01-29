@@ -15,7 +15,7 @@ return {
   -- Super smart column status
   {
     "Bekaboo/deadcolumn.nvim",
-    commit = "b9b5e23",
+    -- commit = "b9b5e23",
     event = {
       "BufReadPre",
       "BufNewFile",
@@ -51,6 +51,28 @@ return {
     keys = {
       { "gS", "<esc><cmd>TSJSplit<cr>", desc = "Split node under cursor" },
       { "gJ", "<esc><cmd>TSJJoin<cr>", desc = "Join node under cursor" },
+    },
+  },
+
+  -- Smooth scrolling
+  {
+    "gen740/SmoothCursor.nvim",
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+    opts = {
+      disable_float_win = true,
+      fancy = {
+        enable = true,
+        head = { cursor = "▷", texthl = "@lsp.type.type", linehl = nil },
+        body = {
+          { cursor = "󰝥", texthl = "@lsp.type.selfKeyword" },
+          { cursor = "●", texthl = "@lsp.type.enum" },
+          { cursor = "•", texthl = "@lsp.type.property" },
+          { cursor = ".", texthl = "@lsp.type.macro" },
+        },
+      },
     },
   },
 }
