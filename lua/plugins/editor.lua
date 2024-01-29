@@ -15,7 +15,6 @@ return {
   -- Super smart column status
   {
     "Bekaboo/deadcolumn.nvim",
-    -- commit = "b9b5e23",
     event = {
       "BufReadPre",
       "BufNewFile",
