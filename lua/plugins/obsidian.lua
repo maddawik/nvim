@@ -1,6 +1,6 @@
 return {
   "epwalsh/obsidian.nvim",
-  version = "*",
+  -- version = "*",
   ft = "markdown",
   opts = {
     templates = {
@@ -22,14 +22,14 @@ return {
     },
   },
   init = function()
-    require("which-key").register({ o = { name = "+obsidian" } }, { prefix = "<leader>" })
+    require("which-key").register({ o = { name = "+obsidian" } }, { prefix = "<leader>", mode = { "n", "v" } })
   end,
   keys = {
     { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
     { "<leader>oh", "<cmd>ObsidianCheck<CR>", desc = "Check Health" },
     { "<leader>of", "<cmd>ObsidianFollowLink<CR>", desc = "Follow Link" },
-    { "<leader>ol", "<cmd>ObsidianLink<CR>", desc = "New Link" },
-    { "<leader>oL", "<cmd>ObsidianLinkNew<CR>", desc = "New Link & File" },
+    { "<leader>ol", "<cmd>ObsidianLink<CR>", desc = "New Link", mode = "v" },
+    { "<leader>oL", "<cmd>ObsidianLinkNew<CR>", desc = "New Link & File", mode = "v" },
     { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New Note" },
     { "<leader>oo", "<cmd>ObsidianOpen<CR>", desc = "Open Obsidian" },
     { "<leader>op", "<cmd>ObsidianPasteImg<CR>", desc = "Paste Image" },
@@ -40,11 +40,5 @@ return {
     { "<leader>od", "<cmd>ObsidianToday<CR>", desc = "Todays Note" },
     { "<leader>ot", "<cmd>ObsidianTomorrow<CR>", desc = "Tomorrows Note" },
     { "<leader>oy", "<cmd>ObsidianYesterday<CR>", desc = "Yesterdays Note" },
-    {
-      "<leader>ch",
-      '<cmd>lua require("obsidian.util").toggle_checkbox()<CR>',
-      desc = "Toggle Checkbox",
-      ft = "markdown",
-    },
   },
 }
