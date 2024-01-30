@@ -50,14 +50,6 @@ return {
           key = "s",
         },
         {
-          desc = "projects",
-          icon = " ",
-          icon_hl = "@variable",
-          group = "DiagnosticSignHint",
-          action = "Telescope projects",
-          key = "p",
-        },
-        {
           desc = "config",
           icon = " ",
           icon_hl = "@variable",
