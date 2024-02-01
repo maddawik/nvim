@@ -1,6 +1,6 @@
 return {
   "epwalsh/obsidian.nvim",
-  -- version = "*",
+  version = "*",
   ft = "markdown",
   opts = {
     templates = {
