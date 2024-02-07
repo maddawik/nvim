@@ -3,6 +3,10 @@ return {
   version = "*",
   ft = "markdown",
   opts = {
+    follow_url_func = function(url)
+      vim.fn.jobstart({ "open", url }) -- Mac OS
+      -- vim.fn.jobstart({"xdg-open", url})  -- linux
+    end,
     templates = {
       subdir = "templates",
     },
