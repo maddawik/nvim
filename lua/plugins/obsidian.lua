@@ -4,15 +4,15 @@ return {
   ft = "markdown",
   opts = {
     follow_url_func = function(url)
-      vim.fn.jobstart({ "open", url }) -- Mac OS
-      -- vim.fn.jobstart({"xdg-open", url})  -- linux
+      vim.fn.jobstart({ "open", url })
     end,
     templates = {
       subdir = "templates",
     },
-    notes_subdir = "notes",
+    notes_subdir = "inbox",
+    new_notes_location = "notes_subdir",
     daily_notes = {
-      folder = "notes/dailies",
+      folder = "inbox/dailies",
     },
     workspaces = {
       {
@@ -24,12 +24,16 @@ return {
         path = "~/vaults/work",
       },
     },
+    disable_frontmatter = function(file)
+      return string.find(file, "-presenterm.md") -- Don't format presenations
+    end,
   },
   init = function()
     require("which-key").register({ o = { name = "+obsidian" } }, { prefix = "<leader>", mode = { "n", "v" } })
   end,
   keys = {
     { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
+    { "<leader>oe", "<cmd>ObsidianExtractNote<CR>", desc = "Extract Note", mode = "v" },
     { "<leader>oh", "<cmd>ObsidianCheck<CR>", desc = "Check Health" },
     { "<leader>of", "<cmd>ObsidianFollowLink<CR>", desc = "Follow Link" },
     { "<leader>ol", "<cmd>ObsidianLink<CR>", desc = "New Link", mode = "v" },
@@ -37,12 +41,13 @@ return {
     { "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New Note" },
     { "<leader>oo", "<cmd>ObsidianOpen<CR>", desc = "Open Obsidian" },
     { "<leader>op", "<cmd>ObsidianPasteImg<CR>", desc = "Paste Image" },
-    { "<leader>o<space>", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find File" },
     { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Rename Note" },
     { "<leader>og", "<cmd>ObsidianSearch<CR>", desc = "Grep" },
-    { "<leader>oN", "<cmd>ObsidianTemplate<CR>", desc = "New from Template" },
+    { "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Insert Template" },
     { "<leader>od", "<cmd>ObsidianToday<CR>", desc = "Todays Note" },
-    { "<leader>ot", "<cmd>ObsidianTomorrow<CR>", desc = "Tomorrows Note" },
+    { "<leader>oD", "<cmd>ObsidianTomorrow<CR>", desc = "Tomorrows Note" },
     { "<leader>oy", "<cmd>ObsidianYesterday<CR>", desc = "Yesterdays Note" },
+    { "<leader>ow", "<cmd>ObsidianWorkspace<CR>", desc = "Change Workspace" },
+    { "<leader>o<space>", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find File" },
   },
 }
