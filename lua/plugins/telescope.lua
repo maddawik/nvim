@@ -21,7 +21,7 @@ return {
       { "<leader>gs", false },
       -- add a keymap to browse plugin files
       {
-        "<leader>fC",
+        "<leader>fp",
         function()
           require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
         end,
