@@ -1,4 +1,5 @@
 vim.opt.colorcolumn = "80"
+vim.opt.pumblend = 0
 -- vim.opt.listchars = {
 --   space = ".",
 --   eol = "↲",
