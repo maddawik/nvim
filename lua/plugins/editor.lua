@@ -64,7 +64,7 @@ return {
       disable_float_win = true,
       fancy = {
         enable = true,
-        head = { cursor = "▷", texthl = "@function", linehl = nil },
+        head = { cursor = "", texthl = "@function", linehl = nil },
         body = {
           { cursor = "󰝥" },
           { cursor = "●" },

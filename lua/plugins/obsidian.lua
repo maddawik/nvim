@@ -15,6 +15,8 @@ return {
     version = "*",
     event = {
       "BufReadPre " .. personal_vault .. "/**.md",
+      "BufReadPre " .. work_vault .. "/**.md",
+      "BufNewFile " .. personal_vault .. "/**.md",
       "BufNewFile " .. work_vault .. "/**.md",
     },
     opts = {
