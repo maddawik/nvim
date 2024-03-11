@@ -1,3 +1,20 @@
+local folder_path = vim.fn.expand("~") .. "/vaults/work/inbox"
+local is_work = vim.fn.isdirectory(folder_path)
+
+local function today()
+  if is_work == 1 then
+    vim.cmd("ObsidianWorkspace work")
+  end
+  vim.cmd("ObsidianToday")
+end
+
+local function yesterday()
+  if is_work == 1 then
+    vim.cmd("ObsidianWorkspace work")
+  end
+  vim.cmd("ObsidianYesterday")
+end
+
 return {
   "nvimdev/dashboard-nvim",
   opts = {
@@ -10,36 +27,28 @@ return {
       footer = {},
       shortcut = {
         {
+          desc = "today",
+          icon = " ",
+          icon_hl = "@variable",
+          group = "@constructor",
+          action = today,
+          key = "d",
+        },
+        {
+          desc = "yesterday",
+          icon = "󰇡 ",
+          icon_hl = "@variable",
+          group = "Error",
+          action = yesterday,
+          key = "y",
+        },
+        {
           desc = "lazy",
           icon = "󰒲 ",
           icon_hl = "@variable",
-          group = "@constructor",
+          group = "@exception",
           action = "Lazy",
           key = "l",
-        },
-        {
-          desc = "update",
-          icon = "󰊳 ",
-          icon_hl = "@variable",
-          group = "@property",
-          action = "Lazy update",
-          key = "u",
-        },
-        {
-          icon = " ",
-          icon_hl = "@variable",
-          desc = "files",
-          group = "Label",
-          action = "Telescope find_files",
-          key = "f",
-        },
-        {
-          desc = "grep",
-          icon = " ",
-          icon_hl = "@variable",
-          group = "@exception",
-          action = "Telescope live_grep",
-          key = "g",
         },
         {
           desc = "session",
