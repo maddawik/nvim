@@ -33,6 +33,6 @@ create_autocmd("FileType", {
   group = augroup("autoformat"),
   pattern = { "terraform", "terraform-vars" },
   callback = function()
-    vim.b.autoformat = false
+    vim.bo.autoformat = false
   end,
 })

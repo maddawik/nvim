@@ -14,6 +14,7 @@ end
 
 return {
   "echasnovski/mini.files",
+  lazy = false,
   opts = {
     content = {
       filter = filter_hide,

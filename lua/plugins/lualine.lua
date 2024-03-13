@@ -1,6 +1,5 @@
 return {
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
   opts = function(_, opts)
     opts.options.globalstatus = false
     opts.options.component_separators = { left = "", right = "" }

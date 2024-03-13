@@ -18,7 +18,11 @@ return {
       "BufReadPre " .. work_vault .. "/**.md",
       "BufNewFile " .. personal_vault .. "/**.md",
       "BufNewFile " .. work_vault .. "/**.md",
-      "VeryLazy",
+    },
+    cmd = {
+      "ObsidianWorkspace",
+      "ObsidianToday",
+      "ObsidianYesterday",
     },
     opts = {
       follow_url_func = function(url)
