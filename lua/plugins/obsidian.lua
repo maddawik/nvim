@@ -2,6 +2,7 @@ local personal_vault = vim.fn.expand("~") .. "/vaults/personal"
 local work_vault = vim.fn.expand("~") .. "/vaults/work"
 
 return {
+  event = "VeryLazy",
   {
     "folke/which-key.nvim",
     opts = {
@@ -21,8 +22,7 @@ return {
     },
     cmd = {
       "ObsidianWorkspace",
-      "ObsidianToday",
-      "ObsidianYesterday",
+      "ObsidiaDailies",
     },
     opts = {
       follow_url_func = function(url)

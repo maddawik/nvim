@@ -1,18 +1,12 @@
 local folder_path = vim.fn.expand("~") .. "/vaults/work/inbox"
 local is_work = vim.fn.isdirectory(folder_path)
 
-local function today()
-  if is_work == 1 then
-    vim.cmd("ObsidianWorkspace work")
+local function dailies()
+  local client = require("obsidian").get_client()
+  if is_work == 1 and not (client.current_workspace.name == "work") then
+    client.switch_workspace(client, "work")
   end
-  vim.cmd("ObsidianToday")
-end
-
-local function yesterday()
-  if is_work == 1 then
-    vim.cmd("ObsidianWorkspace work")
-  end
-  vim.cmd("ObsidianYesterday")
+  vim.cmd("ObsidianDailies")
 end
 
 return {
@@ -27,20 +21,12 @@ return {
       footer = {},
       shortcut = {
         {
-          desc = "today",
+          desc = "dailies",
           icon = " ",
           icon_hl = "@variable",
           group = "@constructor",
-          action = today,
+          action = dailies,
           key = "d",
-        },
-        {
-          desc = "yesterday",
-          icon = "󰇡 ",
-          icon_hl = "@variable",
-          group = "Error",
-          action = yesterday,
-          key = "y",
         },
         {
           desc = "lazy",
