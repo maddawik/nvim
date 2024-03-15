@@ -34,6 +34,14 @@ return {
     end,
   },
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gdtoolkit",
+      },
+    },
+  },
+  {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
