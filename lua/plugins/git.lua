@@ -1,16 +1,30 @@
 return {
   -- Fugitive
   {
-    "tpope/vim-fugitive",
-    cmd = { "Git", "G", "GBrowse" },
-    keys = {
-      { "<leader>gf", "<Cmd>vertical G<CR>", desc = "Fugitive" },
-      { "<leader>gp", "<Cmd>G pull<CR>", desc = "pull" },
-      { "<leader>gP", "<Cmd>G push<CR>", desc = "push" },
-    },
+    "NeogitOrg/neogit",
     dependencies = {
-      "tpope/vim-rhubarb",
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim", -- Diff integration
+      "nvim-telescope/telescope.nvim",
     },
+    cmd = { "Neogit" },
+    keys = {
+      {
+        "<leader>gs",
+        function()
+          require("neogit").open({ kind = "auto" })
+        end,
+        desc = "Neogit (cwd)",
+      },
+      {
+        "<leader>gS",
+        function()
+          require("neogit").open({ cwd = require("lazyvim.util.root").get(), kind = "auto" })
+        end,
+        desc = "Neogit (root dir)",
+      },
+    },
+    config = true,
   },
   -- Worktrees
   {

@@ -36,3 +36,12 @@ create_autocmd("FileType", {
     vim.bo.autoformat = false
   end,
 })
+
+create_autocmd("FileType", {
+  desc = "Disable colorcolumn for NeogitStatus",
+  group = augroup("colorcolumn"),
+  pattern = { "NeogitStatus" },
+  callback = function()
+    vim.opt.colorcolumn = "0"
+  end,
+})
