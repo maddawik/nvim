@@ -1,14 +1,3 @@
-local folder_path = vim.fn.expand("~") .. "/vaults/work/inbox"
-local is_work = vim.fn.isdirectory(folder_path)
-
-local function dailies()
-  local client = require("obsidian").get_client()
-  if is_work == 1 and not (client.current_workspace.name == "work") then
-    client.switch_workspace(client, "work")
-  end
-  vim.cmd("ObsidianDailies")
-end
-
 return {
   "nvimdev/dashboard-nvim",
   opts = {
@@ -25,7 +14,7 @@ return {
           icon = " ",
           icon_hl = "@variable",
           group = "@constructor",
-          action = dailies,
+          action = "ObsidianDailies",
           key = "d",
         },
         {
