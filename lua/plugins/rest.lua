@@ -9,6 +9,7 @@ return {
   },
   {
     "rest-nvim/rest.nvim",
+    version = "1.2.1",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
     },

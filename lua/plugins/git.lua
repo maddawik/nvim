@@ -1,5 +1,5 @@
 return {
-  -- Fugitive
+  -- Neogit
   {
     "NeogitOrg/neogit",
     dependencies = {
