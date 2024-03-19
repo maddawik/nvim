@@ -4,7 +4,13 @@ return {
     ft = "fish",
   },
   { "andersevenrud/cmp-tmux", event = "BufReadPre" },
-  { "petertriho/cmp-git", ft = "gitcommit", config = true },
+  {
+    "petertriho/cmp-git",
+    ft = { "gitcommit", "octo", "NeogitCommitMessage" },
+    opts = {
+      filetypes = { "gitcommit", "octo", "NeogitCommitMessage" },
+    },
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {},
