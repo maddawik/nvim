@@ -9,7 +9,16 @@ return {
   -- Better splits and tmux navigation
   {
     "mrjones2014/smart-splits.nvim",
-    event = "VeryLazy",
+    keys = {
+      { "<C-h>", "<cmd>SmartCursorMoveLeft<CR>", mode = { "n", "t" } },
+      { "<C-j>", "<cmd>SmartCursorMoveDown<CR>", mode = { "n", "t" } },
+      { "<C-k>", "<cmd>SmartCursorMoveUp<CR>", mode = { "n", "t" } },
+      { "<C-l>", "<cmd>SmartCursorMoveRight<CR>", mode = { "n", "t" } },
+      { "<C-Up>", "<cmd>SmartResizeUp<CR>", mode = { "n", "t" } },
+      { "<C-Down>", "<cmd>SmartResizeDown<CR>", mode = { "n", "t" } },
+      { "<C-Left>", "<cmd>SmartResizeLeft<CR>", mode = { "n", "t" } },
+      { "<C-Right>", "<cmd>SmartResizeRight<CR>", mode = { "n", "t" } },
+    },
   },
 
   -- Super smart column status
