@@ -12,14 +12,14 @@ return {
       {
         "<leader>gs",
         function()
-          require("neogit").open({ kind = "auto" })
+          require("neogit").open({ cwd = require("lazyvim.util.root").get(), kind = "auto" })
         end,
         desc = "Neogit (cwd)",
       },
       {
         "<leader>gS",
         function()
-          require("neogit").open({ cwd = require("lazyvim.util.root").get(), kind = "auto" })
+          require("neogit").open({ kind = "auto" })
         end,
         desc = "Neogit (root dir)",
       },
