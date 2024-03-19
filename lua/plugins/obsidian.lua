@@ -1,6 +1,27 @@
 local personal_vault = vim.fn.expand("~") .. "/vaults/personal"
 local work_vault = vim.fn.expand("~") .. "/vaults/work"
 
+local function get_local_workspaces()
+  local folder_path = vim.fn.expand("~") .. "/vaults/work/.git"
+  local is_work = vim.fn.isdirectory(folder_path)
+
+  local workspaces = {
+    {
+      name = "personal",
+      path = personal_vault,
+    },
+  }
+
+  if is_work == 1 then
+    table.insert(workspaces, 1, {
+      name = "work",
+      path = work_vault,
+    })
+  end
+
+  return workspaces
+end
+
 return {
   {
     "folke/which-key.nvim",
@@ -18,21 +39,11 @@ return {
       "BufReadPre " .. work_vault .. "/**.md",
       "BufNewFile " .. personal_vault .. "/**.md",
       "BufNewFile " .. work_vault .. "/**.md",
-      "VeryLazy",
     },
     cmd = {
       "ObsidianWorkspace",
       "ObsidianDailies",
     },
-    init = function()
-      local folder_path = vim.fn.expand("~") .. "/vaults/work/.git"
-      local is_work = vim.fn.isdirectory(folder_path)
-
-      local client = require("obsidian").get_client()
-      if is_work == 1 and not (client.current_workspace.name == "work") then
-        client.switch_workspace(client, "work")
-      end
-    end,
     opts = {
       follow_url_func = function(url)
         vim.fn.jobstart({ "open", url })
@@ -46,16 +57,7 @@ return {
       daily_notes = {
         folder = "inbox/dailies",
       },
-      workspaces = {
-        {
-          name = "personal",
-          path = personal_vault,
-        },
-        {
-          name = "work",
-          path = work_vault,
-        },
-      },
+      workspaces = get_local_workspaces(),
       disable_frontmatter = function(file)
         return string.find(file, "-presenterm.md") -- Don't format presenations
       end,
