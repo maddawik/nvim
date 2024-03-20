@@ -41,7 +41,6 @@ return {
       "BufNewFile " .. work_vault .. "/**.md",
     },
     cmd = {
-      "ObsidianWorkspace",
       "ObsidianDailies",
     },
     opts = {
@@ -51,7 +50,6 @@ return {
       templates = {
         subdir = "templates",
       },
-      log_level = vim.log.levels.ERROR,
       notes_subdir = "inbox",
       new_notes_location = "notes_subdir",
       daily_notes = {
@@ -75,11 +73,9 @@ return {
       { "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Rename Note" },
       { "<leader>og", "<cmd>ObsidianSearch<CR>", desc = "Grep" },
       { "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Insert Template" },
-      { "<leader>od", "<cmd>ObsidianToday<CR>", desc = "Todays Note" },
-      { "<leader>oD", "<cmd>ObsidianTomorrow<CR>", desc = "Tomorrows Note" },
-      { "<leader>oy", "<cmd>ObsidianYesterday<CR>", desc = "Yesterdays Note" },
+      { "<leader>od", "<cmd>ObsidianDailies<CR>", desc = "Open Dailies" },
       { "<leader>ow", "<cmd>ObsidianWorkspace<CR>", desc = "Change Workspace" },
-      { "<leader>o<space>", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find File" },
+      { "<leader>o<space>", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find Note" },
     },
   },
 }

@@ -32,7 +32,7 @@ return {
   {
     "nvim-telescope/telescope-symbols.nvim",
     keys = {
-      { "<leader>se", "<cmd>Telescope symbols<cr>", desc = "Emojis" },
+      { "<leader>se", "<cmd>Telescope symbols theme=get_cursor<cr>", desc = "Emojis" },
     },
   },
 }
