@@ -8,19 +8,40 @@ return {
     },
   },
   {
-    "rest-nvim/rest.nvim",
-    version = "1.2.1",
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
+    "vhyrro/luarocks.nvim",
+    branch = "go-away-python",
+    opts = {
+      rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
     },
+  },
+  {
+    "mawdac/rest.nvim",
+    branch = "fix-keybinds",
     ft = "http",
+    dependencies = {
+      "vhyrro/luarocks.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
     config = function()
-      require("rest-nvim").setup({})
+      require("rest-nvim").setup()
+      require("telescope").load_extension("rest")
     end,
     keys = {
-      { "<leader>rr", "<Plug>RestNvim<cr>", desc = "Run Request" },
-      { "<leader>rp", "<Plug>RestNvimPreview<cr>", desc = "Preview Request" },
-      { "<leader>rl", "<Plug>RestNvimLast<cr>", desc = "Run Last Request" },
+      { "<leader>rr", "<Cmd>Rest run<CR>", desc = "Run Request" },
+      { "<leader>rl", "<Cmd>Rest run last<CR>", desc = "Run Last Request" },
+      {
+        "<leader>re",
+        function()
+          require("telescope").extensions.rest.select_env()
+        end,
+        desc = "Select Env",
+      },
     },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      table.insert(opts.sections.lualine_x, { "rest" })
+    end,
   },
 }
