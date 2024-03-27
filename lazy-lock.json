@@ -6,6 +6,7 @@
   "bufferline.nvim": { "branch": "main", "commit": "64e2c5def50dfd6b6f14d96a45fa3d815a4a1eef" },
   "catppuccin": { "branch": "main", "commit": "56fb98218d22d5c326387bf9e4076227e7372e6b" },
   "clangd_extensions.nvim": { "branch": "main", "commit": "34c8eaa12be192e83cd4865ce2375e9f53e728f2" },
+  "chezmoi.nvim": { "branch": "main", "commit": "7c7746adced0e4ba5b1be4dd766a786ffddc65c1" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-fish": { "branch": "main", "commit": "8ae7bfb1b3251d433c4adf4e64396ef929fbd91f" },
   "cmp-git": { "branch": "main", "commit": "8d8993680d627c8f13bd85094eba84604107dbdd" },
