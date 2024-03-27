@@ -2,8 +2,8 @@ local personal_vault = vim.fn.expand("~") .. "/vaults/personal"
 local work_vault = vim.fn.expand("~") .. "/vaults/work"
 
 local function get_local_workspaces()
-  local folder_path = vim.fn.expand("~") .. "/vaults/work/.git"
-  local is_work = vim.fn.isdirectory(folder_path)
+  local check_path = work_vault .. "/.git"
+  local is_work = vim.fn.isdirectory(check_path)
 
   local workspaces = {
     {
