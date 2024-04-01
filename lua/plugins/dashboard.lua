@@ -42,14 +42,6 @@ return {
           key = "c",
         },
         {
-          desc = "chezmoi",
-          icon = " ",
-          icon_hl = "@variable",
-          group = "@function",
-          action = 'lua require("telescope").extensions.chezmoi.find_files()',
-          key = "C",
-        },
-        {
           desc = "quit",
           icon = " ",
           icon_hl = "@variable",
