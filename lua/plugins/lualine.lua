@@ -11,7 +11,7 @@ return {
       end,
     } }
     -- Things after this are centered
-    -- table.insert(opts.sections.lualine_c, "%=")
+    table.insert(opts.sections.lualine_c, 3, "%=")
     table.insert(opts.sections.lualine_x, {
       -- Lsp server name
       function()

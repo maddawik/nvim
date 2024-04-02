@@ -9,7 +9,7 @@ local function pickTheme()
   if math.random() > 0.98 then
     return "stars"
   else
-    return { symbols = { "💻", "👱", " " }, colors = { "#00ADD8" } }
+    return { symbols = { "💻", "👱", " ", " " }, colors = { "#00ADD8" } }
   end
 end
 
