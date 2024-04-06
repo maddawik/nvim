@@ -10,14 +10,6 @@ return {
       footer = {},
       shortcut = {
         {
-          desc = "dailies",
-          icon = " ",
-          icon_hl = "@variable",
-          group = "@constructor",
-          action = "ObsidianDailies",
-          key = "d",
-        },
-        {
           desc = "lazy",
           icon = "󰒲 ",
           icon_hl = "@variable",

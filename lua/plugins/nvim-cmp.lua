@@ -3,7 +3,13 @@ return {
     "mtoohey31/cmp-fish",
     ft = "fish",
   },
-  { "andersevenrud/cmp-tmux", event = "BufReadPre" },
+  {
+    "andersevenrud/cmp-tmux",
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+  },
   {
     "petertriho/cmp-git",
     ft = { "gitcommit", "octo", "NeogitCommitMessage" },
