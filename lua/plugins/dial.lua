@@ -131,6 +131,7 @@ return {
     return {
       dials_by_ft = {
         css = "css",
+        go = "go",
         javascript = "typescript",
         javascriptreact = "typescript",
         json = "json",
@@ -165,6 +166,13 @@ return {
           augend.hexcolor.new({
             case = "upper",
           }),
+        },
+        go = {
+          augend.integer.alias.decimal, -- nonnegative and negative decimal number
+          augend.constant.alias.bool, -- boolean value (true <-> false)
+          ordinal_numbers,
+          weekdays,
+          months,
         },
         markdown = {
           augend.misc.alias.markdown_header,
