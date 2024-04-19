@@ -1,6 +1,22 @@
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = { "abeldekat/harpoonline", version = "*" },
   opts = function(_, opts)
+    local Harpoonline = require("harpoonline")
+    Harpoonline.setup({
+      on_update = function()
+        require("lualine").refresh()
+      end,
+      -- icon = "󰀱", "", "󱡅"
+      icon = "󰀱",
+      formatter = "short",
+    })
+    local h_line = {
+      Harpoonline.format,
+      "filename",
+      color = require("lazyvim.util.ui").fg("Function"),
+    }
+
     opts.options.globalstatus = false
     opts.options.component_separators = { left = "", right = "" }
     opts.options.section_separators = { left = "", right = "" }
@@ -10,8 +26,9 @@ return {
         return str:sub(1, 3)
       end,
     } }
+    table.insert(opts.sections.lualine_c, 2, h_line)
     -- Things after this are centered
-    table.insert(opts.sections.lualine_c, 3, "%=")
+    table.insert(opts.sections.lualine_c, 4, "%=")
     table.insert(opts.sections.lualine_x, {
       -- Lsp server name
       function()
