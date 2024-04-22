@@ -24,7 +24,7 @@ return {
     },
     opts = {
       lsp_inlay_hints = {
-        enable = false, -- autocmd for enabling
+        enable = false, -- better managed without this
       },
     },
     event = { "CmdlineEnter" },

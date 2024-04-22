@@ -1,4 +1,14 @@
 return {
+  -- Enable inlay hints by default
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = {
+        enabled = true,
+      },
+    },
+  },
+
   -- Scoped buffers
   {
     "tiagovla/scope.nvim",
