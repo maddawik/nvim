@@ -7,8 +7,8 @@ return {
       on_update = function()
         require("lualine").refresh()
       end,
-      -- icon = "󰀱", "", "󱡅"
-      icon = "󰀱",
+      -- icon = "󰀱", "", "󱡅", "󰛢"
+      icon = "󰛢",
       formatter = "short",
     })
     local h_line = {
