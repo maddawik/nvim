@@ -1,32 +1,4 @@
 return {
-  -- Neogit
-  {
-    "NeogitOrg/neogit",
-    branch = "nightly",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim", -- Diff integration
-      "nvim-telescope/telescope.nvim",
-    },
-    cmd = { "Neogit" },
-    keys = {
-      {
-        "<leader>gs",
-        function()
-          require("neogit").open({ cwd = require("lazyvim.util.root").get(), kind = "auto" })
-        end,
-        desc = "Neogit (cwd)",
-      },
-      {
-        "<leader>gS",
-        function()
-          require("neogit").open({ kind = "auto" })
-        end,
-        desc = "Neogit (root dir)",
-      },
-    },
-    config = true,
-  },
   -- Worktrees
   {
     "ThePrimeagen/git-worktree.nvim",

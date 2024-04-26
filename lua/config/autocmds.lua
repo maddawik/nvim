@@ -1,5 +1,5 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_config_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("user." .. name, {})
 end
 local create_autocmd = vim.api.nvim_create_autocmd
 
@@ -11,23 +11,5 @@ create_autocmd("FileType", {
     vim.opt.shiftwidth = 4
     vim.opt.softtabstop = 4
     vim.opt.expandtab = true
-  end,
-})
-
-create_autocmd("FileType", {
-  desc = "Disable autoformat for terraform files",
-  group = augroup("autoformat"),
-  pattern = { "terraform", "terraform-vars" },
-  callback = function()
-    vim.bo.autoformat = false
-  end,
-})
-
-create_autocmd("FileType", {
-  desc = "Disable colorcolumn for NeogitStatus",
-  group = augroup("colorcolumn"),
-  pattern = { "NeogitStatus" },
-  callback = function()
-    vim.opt.colorcolumn = "0"
   end,
 })
