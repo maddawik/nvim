@@ -3,7 +3,7 @@ return {
   opts = {
     label = {
       rainbow = {
-        enabled = false,
+        enabled = true,
       },
     },
   },
