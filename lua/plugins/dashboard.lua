@@ -3,10 +3,17 @@ return {
   opts = {
     theme = "hyper",
     config = {
+      -- packages = { enable = false },
       week_header = {
         enable = true,
       },
-      mru = { limit = 6 },
+      project = {
+        enable = false,
+      },
+      mru = {
+        limit = 6,
+        cwd_only = true,
+      },
       footer = {},
       shortcut = {
         {
