@@ -11,14 +11,6 @@ return {
       render = function(props)
         local lazy_icons = require("lazyvim.config").icons
 
-        local function get_focus_group()
-          if props.focused == true then
-            return "ColorColumn"
-          else
-            return "FoldColumn"
-          end
-        end
-
         local function get_filename()
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           if filename == "" then
@@ -73,16 +65,36 @@ return {
             end
           end
           if #labels > 0 then
+            table.insert(labels, { " 󰊢 " .. signs.n_ranges })
             table.insert(labels, { " ┊" })
           end
           return labels
         end
 
+        local function get_harpoon_status()
+          local harpoon = require("harpoon")
+          local marks = harpoon:list().items
+          local current_file_path = vim.fn.expand("#" .. props.buf .. ":p:.")
+          local labels = {}
+
+          for id, item in ipairs(marks) do
+            if item.value == current_file_path then
+              table.insert(labels, { id, group = "Number" })
+              break
+            end
+          end
+
+          if #labels > 0 then
+            table.insert(labels, 1, { " 󰛢 ", group = "Function" })
+          end
+          return labels
+        end
         return {
           { get_diagnostics() },
           { get_git_diff() },
+          { get_harpoon_status() },
           { get_filename() },
-          group = get_focus_group(),
+          group = props.focused and "ColorColumn" or "FoldColumn",
         }
       end,
     })

@@ -2,23 +2,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
-  dependencies = { "abeldekat/harpoonline", version = "*" },
   opts = function()
-    local Harpoonline = require("harpoonline")
-    Harpoonline.setup({
-      on_update = function()
-        require("lualine").refresh()
-      end,
-      -- icon = "󰀱", "", "󱡅", "󰛢"
-      icon = "󰛢",
-      -- formatter = "short",
-    })
-    local h_line = {
-      Harpoonline.format,
-      "filename",
-      color = require("lazyvim.util.ui").fg("Function"),
-    }
-
     -- PERF: we don't need this lualine require madness 🤷
     local lualine_require = require("lualine_require")
     lualine_require.require = require
@@ -46,7 +30,6 @@ return {
 
         lualine_c = {
           LazyVim.lualine.root_dir(),
-          h_line,
           "%=",
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
