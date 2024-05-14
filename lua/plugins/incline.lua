@@ -1,7 +1,7 @@
 return {
   "b0o/incline.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local helpers = require("incline.helpers")
     local devicons = require("nvim-web-devicons")
     require("incline").setup({
       window = {
@@ -47,7 +47,7 @@ return {
           return labels
         end
 
-        local function get_git_diff()
+        local function get_mini_diff()
           local icons = {
             add = lazy_icons.git.added,
             change = lazy_icons.git.modified,
@@ -71,30 +71,21 @@ return {
           return labels
         end
 
-        local function get_harpoon_status()
-          local harpoon = require("harpoon")
-          local marks = harpoon:list().items
-          local current_file_path = vim.fn.expand("#" .. props.buf .. ":p:.")
-          local labels = {}
-
-          for id, item in ipairs(marks) do
-            if item.value == current_file_path then
-              table.insert(labels, { id, group = "Number" })
-              break
-            end
+        local function get_grapple_status()
+          local grapple_status
+          grapple_status = require("grapple").name_or_index({ buffer = props.buf }) or ""
+          if grapple_status ~= "" then
+            grapple_status = { { " 󰛢 ", group = "Function" }, { grapple_status, group = "Constant" } }
           end
-
-          if #labels > 0 then
-            table.insert(labels, 1, { " 󰛢 ", group = "Function" })
-          end
-          return labels
+          return grapple_status
         end
+
         return {
           { get_diagnostics() },
-          { get_git_diff() },
-          { get_harpoon_status() },
+          { get_mini_diff() },
+          { get_grapple_status() },
           { get_filename() },
-          group = props.focused and "ColorColumn" or "FoldColumn",
+          group = props.focused and "ColorColumn" or "SignColumn",
         }
       end,
     })
