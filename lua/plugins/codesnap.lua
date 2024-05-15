@@ -1,3 +1,16 @@
+local function get_random_theme()
+  math.randomseed(os.time())
+  local themes = {
+    "bamboo",
+    "sea",
+    "peach",
+    "grape",
+    "dusk",
+    "summer",
+  }
+  return themes[math.random(1, #themes)]
+end
+
 return {
   {
     "folke/which-key.nvim",
@@ -21,7 +34,7 @@ return {
       title = "",
       code_font_family = "JetBrains Mono",
       watermark = "EJ Reilly",
-      bg_theme = "grape",
+      bg_theme = get_random_theme(),
       breadcrumbs_separator = "/",
       has_breadcrumbs = false,
       has_line_number = true,
