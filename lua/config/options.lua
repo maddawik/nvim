@@ -1,13 +1,13 @@
 vim.opt.colorcolumn = "80"
 vim.opt.pumblend = 0
 vim.opt.listchars = {
-  --   space = ".",
+  -- space = ".",
   eol = "↲",
   --   nbsp = "␣",
   --   trail = "·",
   --   precedes = "←",
   --   extends = "→",
-  --   tab = "¬ ",
+  tab = "¬ ",
   --   conceal = "※",
 }
 
