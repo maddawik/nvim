@@ -20,7 +20,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 return {
   "NeogitOrg/neogit",
-  branch = "nightly",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "sindrets/diffview.nvim", -- Diff integration
