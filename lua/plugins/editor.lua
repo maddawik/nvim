@@ -71,27 +71,4 @@ return {
       { "gJ", "<esc><cmd>TSJJoin<cr>",  desc = "Join node under cursor" },
     },
   },
-
-  -- Cursor tail
-  {
-    "gen740/SmoothCursor.nvim",
-    enabled = false,
-    event = {
-      "BufReadPre",
-      "BufNewFile",
-    },
-    opts = {
-      disable_float_win = true,
-      fancy = {
-        enable = true,
-        head = { cursor = "", texthl = "@function", linehl = nil },
-        body = {
-          { cursor = "󰝥" },
-          { cursor = "●" },
-          { cursor = "•" },
-          { cursor = "." },
-        },
-      },
-    },
-  },
 }
