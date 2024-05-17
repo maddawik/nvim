@@ -65,8 +65,7 @@ return {
             end
           end
           if #labels > 0 then
-            table.insert(labels, { " 󰊢 " .. signs.n_ranges })
-            table.insert(labels, { " ┊" })
+            table.insert(labels, { " 󰊢 " .. signs.n_ranges .. " ┊" })
           end
           return labels
         end
