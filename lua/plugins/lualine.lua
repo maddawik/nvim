@@ -21,6 +21,7 @@ return {
         lualine_a = {
           {
             "mode",
+            icon = " ",
             fmt = function(str)
               return str:sub(1, 3)
             end,
@@ -75,7 +76,7 @@ return {
               end
               return msg
             end,
-            icon = " ",
+            icon = "🔮",
             color = require("lazyvim.util.ui").fg("Character"),
           },
         },
