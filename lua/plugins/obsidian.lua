@@ -61,6 +61,7 @@ return {
       end,
     },
     keys = {
+      { "<leader>ch", "<cmd>ObsidianToggleCheckbox<CR>", desc = "Toggle Checkbox", ft = "markdown" },
       { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
       { "<leader>oe", "<cmd>ObsidianExtractNote<CR>", desc = "Extract Note", mode = "v" },
       { "<leader>oh", "<cmd>ObsidianCheck<CR>", desc = "Check Health" },
