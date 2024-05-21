@@ -3,13 +3,12 @@ return {
     "folke/which-key.nvim",
     opts = {
       defaults = {
-        ["<leader>r"] = { name = "+run" },
+        ["<leader>R"] = { name = "+run" },
       },
     },
   },
   {
     "vhyrro/luarocks.nvim",
-    branch = "go-away-python",
     opts = {
       rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
     },
@@ -27,10 +26,10 @@ return {
       require("telescope").load_extension("rest")
     end,
     keys = {
-      { "<leader>rr", "<Cmd>Rest run<CR>", desc = "Run Request" },
-      { "<leader>rl", "<Cmd>Rest run last<CR>", desc = "Run Last Request" },
+      { "<leader>Rr", "<Cmd>Rest run<CR>", desc = "Run Request" },
+      { "<leader>Rl", "<Cmd>Rest run last<CR>", desc = "Run Last Request" },
       {
-        "<leader>re",
+        "<leader>Re",
         function()
           require("telescope").extensions.rest.select_env()
         end,
