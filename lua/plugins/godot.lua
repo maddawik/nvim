@@ -15,15 +15,6 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Enable godot LSP for gdscript files",
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("godot_commentstring", { clear = true }),
-  pattern = { "gd", "gdscript" },
-  callback = function()
-    vim.bo.commentstring = "# %s"
-  end,
-  desc = "Change commentstring for gdscript files",
-})
-
 return {
   {
     "nvim-treesitter/nvim-treesitter",
