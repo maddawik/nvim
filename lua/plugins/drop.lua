@@ -17,6 +17,7 @@ return {
   {
     "catdadcode/drop.nvim",
     event = "VeryLazy",
+    enabled = false, -- Just too distracting at times, keeping though
     opts = function(_, opts)
       local thanksgiving_day = require("drop").calculate_us_thanksgiving(os.date("%Y"))
       opts.theme = pickTheme()
