@@ -21,7 +21,7 @@ return {
         lualine_a = {
           {
             "mode",
-            icon = " ",
+            icon = "",
             fmt = function(str)
               return str:sub(1, 3)
             end,
@@ -31,8 +31,13 @@ return {
 
         lualine_c = {
           LazyVim.lualine.root_dir(),
+          {
+            require("lazy.status").updates,
+            cond = require("lazy.status").has_updates,
+            color = LazyVim.ui.fg("Special"),
+          },
           "%=",
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { "filetype",                   icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
         },
         lualine_x = {
@@ -51,13 +56,8 @@ return {
           -- stylua: ignore
           {
             function() return "  " .. require("dap").status() end,
-            cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = LazyVim.ui.fg("Debug"),
-          },
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = LazyVim.ui.fg("Special"),
           },
           {
             -- Lsp server name
