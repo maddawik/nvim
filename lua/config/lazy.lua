@@ -41,14 +41,6 @@ require("lazy").setup({
 
     -- NOTE: This should always be last
     { import = "plugins" },
-    { import = "lazyvim.plugins.extras.lazyrc" },
-    -- Enable project-specific plugin specs with a `.lazy.lua` file.
-    -- File .lazy.lua:
-    --   is read when present in the current working directory should return a
-    --   plugin spec has to be manually trusted for each instance of the file
-    -- See:
-    --   :h 'exrc'
-    --   :h :trust
   },
   defaults = {
     lazy = true,
