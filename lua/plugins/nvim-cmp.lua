@@ -10,6 +10,7 @@ return {
       "BufNewFile",
     },
   },
+  { "hrsh7th/cmp-cmdline" },
   {
     "petertriho/cmp-git",
     ft = { "gitcommit", "octo", "NeogitCommitMessage" },
@@ -22,6 +23,19 @@ return {
     dependencies = {},
     opts = function(_, opts)
       local cmp = require("cmp")
+      -- `:` cmdline setup.
+      cmp.setup.cmdline(":", {
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          {
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" },
+            },
+          },
+        }),
+      })
 
       cmp.setup({
         window = {
