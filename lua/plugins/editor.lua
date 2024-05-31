@@ -64,4 +64,7 @@ return {
       { "gJ", "<esc><cmd>TSJJoin<cr>", desc = "Join node under cursor" },
     },
   },
+
+  -- Wezterm config types
+  { "justinsgithub/wezterm-types" },
 }
