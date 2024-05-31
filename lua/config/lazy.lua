@@ -26,6 +26,12 @@ require("lazy").setup({
         { "<leader>ft", false },
         { "<leader>fT", false },
       },
+      opts = {
+        news = {
+          lazyvim = true,
+          neovim = true,
+        },
+      },
     },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.yanky" },
@@ -48,8 +54,15 @@ require("lazy").setup({
     version = false, -- always use the latest release, likely to break stuff
     -- version = "*", -- latest stable
   },
-  install = { colorscheme = { "tokyonight" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  diff = {
+    cmd = "terminal_git",
+  },
+  install = { colorscheme = { "default" } },
+  checker = {
+    enabled = true,
+    notify = false,
+    frequency = 3600,
+  },
   ui = {
     border = "rounded",
     title = " Lazy 💤 ",
