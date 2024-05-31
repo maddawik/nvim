@@ -55,6 +55,13 @@ return {
     },
   },
 
+  -- Better LSP renaming
+  {
+    "smjonas/inc-rename.nvim",
+    cmd = "IncRename",
+    config = true,
+  },
+
   -- Split/Join blocks of code
   {
     "Wansmer/treesj",
