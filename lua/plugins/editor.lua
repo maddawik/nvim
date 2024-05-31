@@ -65,11 +65,10 @@ return {
   -- Split/Join blocks of code
   {
     "Wansmer/treesj",
-    config = true,
     keys = {
-      { "gS", "<esc><cmd>TSJSplit<cr>", desc = "Split node under cursor" },
-      { "gJ", "<esc><cmd>TSJJoin<cr>", desc = "Join node under cursor" },
+      { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
     },
+    opts = { use_default_keymaps = false, max_join_length = 150 },
   },
 
   -- Wezterm config types
