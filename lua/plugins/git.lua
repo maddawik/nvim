@@ -25,13 +25,16 @@ return {
       },
     },
   },
+
   -- Visuals
   {
     "lewis6991/gitsigns.nvim",
+    enabled = true, -- mini-diff extra disables this by default
     opts = {
       current_line_blame = true,
     },
   },
+
   -- Diff
   {
     "sindrets/diffview.nvim",
@@ -40,12 +43,14 @@ return {
       { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "diff" },
     },
   },
+
   -- GitHub PR's
   {
     "pwntester/octo.nvim",
     config = true,
     cmd = "Octo",
   },
+
   -- Web Links
   {
     "linrongbin16/gitlinker.nvim",
