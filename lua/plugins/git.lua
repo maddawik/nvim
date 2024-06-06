@@ -44,13 +44,6 @@ return {
     },
   },
 
-  -- GitHub PR's
-  {
-    "pwntester/octo.nvim",
-    config = true,
-    cmd = "Octo",
-  },
-
   -- Web Links
   {
     "linrongbin16/gitlinker.nvim",
