@@ -12,13 +12,6 @@ return {
   },
   { "hrsh7th/cmp-cmdline" },
   {
-    "petertriho/cmp-git",
-    ft = { "gitcommit", "octo", "NeogitCommitMessage" },
-    opts = {
-      filetypes = { "gitcommit", "octo", "NeogitCommitMessage" },
-    },
-  },
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {},
     opts = function(_, opts)
