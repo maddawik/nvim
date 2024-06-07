@@ -32,6 +32,8 @@ return {
     enabled = true, -- mini-diff extra disables this by default
     opts = {
       current_line_blame = true,
+      -- disable all keymaps, only use current_line_blame functinoality
+      on_attach = function() end,
     },
   },
 
