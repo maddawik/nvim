@@ -28,14 +28,14 @@ return {
   cmd = { "Neogit" },
   keys = {
     {
-      "<leader>gs",
+      "<leader>gn",
       function()
         require("neogit").open({ cwd = require("lazyvim.util.root").get(), kind = "auto" })
       end,
       desc = "Neogit (cwd)",
     },
     {
-      "<leader>gS",
+      "<leader>gN",
       function()
         require("neogit").open({ kind = "auto" })
       end,
