@@ -13,7 +13,7 @@ return {
         margin = { horizontal = 0 },
       },
       render = function(props)
-        local lazy_icons = require("lazyvim.config").icons
+        local lazy_icons = LazyVim.config.icons
 
         local function get_filename()
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")

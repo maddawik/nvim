@@ -37,7 +37,7 @@ return {
           icon = " ",
           icon_hl = "@variable",
           group = "Number",
-          action = [[lua require("lazyvim.util").telescope.config_files()()]],
+          action = LazyVim.pick.config_files(),
           key = "c",
         },
         {

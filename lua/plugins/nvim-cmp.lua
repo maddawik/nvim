@@ -10,26 +10,11 @@ return {
       "BufNewFile",
     },
   },
-  { "hrsh7th/cmp-cmdline" },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {},
     opts = function(_, opts)
       local cmp = require("cmp")
-      -- `:` cmdline setup.
-      cmp.setup.cmdline(":", {
-        sources = cmp.config.sources({
-          { name = "path" },
-        }, {
-          {
-            name = "cmdline",
-            option = {
-              ignore_cmds = { "Man", "!" },
-            },
-          },
-        }),
-      })
-
       cmp.setup({
         window = {
           -- completion = cmp.config.window.bordered(),

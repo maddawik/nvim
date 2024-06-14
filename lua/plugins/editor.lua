@@ -31,6 +31,14 @@ return {
       "BufReadPre",
       "BufNewFile",
     },
+    config = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("user.octo", {}),
+        desc = "Disable colorcolumn for octo",
+        pattern = { "octo" },
+        command = "silent! set colorcolumn=0",
+      })
+    end,
   },
 
   -- Trim whitespace
