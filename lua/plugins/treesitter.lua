@@ -1,12 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  init = function()
-    vim.filetype.add({ extension = { templ = "templ" } })
-  end,
   opts = {
     ensure_installed = {
       "bash",
-      "c",
       "diff",
       "fish",
       "go",
@@ -26,7 +22,6 @@ return {
       "python",
       "query",
       "regex",
-      "templ",
       "terraform",
       "toml",
       "tsx",
