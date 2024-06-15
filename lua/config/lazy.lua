@@ -27,7 +27,6 @@ require("lazy").setup({
         { "<leader>fT", false },
       },
       opts = {
-        colorscheme = "catppuccin-mocha",
         news = {
           lazyvim = true,
           neovim = true,
