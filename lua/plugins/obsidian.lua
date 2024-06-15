@@ -55,6 +55,9 @@ return {
       daily_notes = {
         folder = "inbox/dailies",
       },
+      picker = {
+        name = "fzf-lua",
+      },
       workspaces = get_local_workspaces(),
       disable_frontmatter = function(file)
         return string.find(file, "-presenterm.md") -- Don't format presenations
