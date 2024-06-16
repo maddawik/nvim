@@ -25,6 +25,7 @@ require("lazy").setup({
         -- disable terminal keymaps
         { "<leader>ft", false },
         { "<leader>fT", false },
+        { "<c-/>", false },
       },
       opts = {
         news = {

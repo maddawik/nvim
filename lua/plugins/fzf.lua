@@ -6,11 +6,6 @@ vim.api.nvim_set_hl(0, "FzfLuaPathLineNr", { link = "Exception" })
 
 return {
   "ibhagwan/fzf-lua",
-  config = function()
-    vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "FloatBorder" })
-    vim.api.nvim_set_hl(0, "FzfLuaHeaderText", { link = "Function" })
-    vim.api.nvim_set_hl(0, "FzfLuaLiveSym", { link = "Error" })
-  end,
   keys = {
     {
       "<leader>fl",
@@ -22,7 +17,7 @@ return {
     {
       "<leader>fh",
       function()
-        require("fzf-lua").files({ cwd = vim.fn.expand("~/") })
+        require("fzf-lua").files({ cwd = vim.fn.expand("~") })
       end,
       desc = "Find Files (~)",
     },
