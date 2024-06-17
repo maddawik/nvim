@@ -21,5 +21,12 @@ return {
       end,
       desc = "Find Files (~)",
     },
+    {
+      "<leader>fC",
+      function()
+        require("fzf-lua").files({ cwd = vim.fn.expand("~") .. "/.config" })
+      end,
+      desc = "Find Files (~/.config)",
+    },
   },
 }
