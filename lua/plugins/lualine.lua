@@ -76,7 +76,7 @@ return {
               end
               return msg
             end,
-            icon = "🔮",
+            icon = " ",
             color = require("lazyvim.util.ui").fg("Character"),
           },
         },
