@@ -3,10 +3,6 @@ return {
   opts = {
     theme = "hyper",
     config = {
-      -- packages = { enable = false },
-      week_header = {
-        enable = true,
-      },
       project = {
         enable = false,
       },

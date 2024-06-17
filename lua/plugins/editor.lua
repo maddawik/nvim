@@ -74,4 +74,19 @@ return {
 
   -- Wezterm config types
   { "justinsgithub/wezterm-types" },
+
+  -- Screencast key utility
+  {
+    "NStefan002/screenkey.nvim",
+    lazy = false, -- it lazy loads itself
+    version = "*",
+    opts = {
+      win_opts = {
+        border = "rounded",
+      },
+    },
+    keys = {
+      { "<leader>uS", "<cmd>Screenkey toggle<cr>", desc = "Screencast Keys" },
+    },
+  },
 }
