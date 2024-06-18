@@ -80,15 +80,16 @@ return {
   -- Screencast key utility
   {
     "NStefan002/screenkey.nvim",
-    lazy = false, -- it lazy loads itself
     version = "*",
     opts = {
       win_opts = {
+        row = vim.o.lines - vim.o.cmdheight - 2,
+        col = vim.o.columns - 3,
         border = "rounded",
       },
     },
     keys = {
-      { "<leader>uS", "<cmd>Screenkey toggle<cr>", desc = "Screencast Keys" },
+      { "<leader>uS", "<cmd>Screenkey toggle<cr>", desc = "Toggle Screenkey" },
     },
   },
 }
