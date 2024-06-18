@@ -44,12 +44,14 @@ return {
   -- Trim whitespace
   {
     "cappyzawa/trim.nvim",
+    event = {
+      "BufWritePre",
+    },
     opts = {
-      trim_on_write = false,
+      trim_on_write = true,
     },
     keys = {
-      { "<leader>ft", "<cmd>Trim<cr>", desc = "Trim whitespace" },
-      { "<leader>fT", "<cmd>TrimToggle<cr>", desc = "Toggle auto trim whitespace" },
+      { "<leader>ut", "<cmd>TrimToggle<cr>", desc = "Toggle Trim Whitespace" },
     },
   },
 

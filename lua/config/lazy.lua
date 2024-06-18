@@ -21,12 +21,6 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      keys = {
-        -- disable terminal keymaps
-        { "<leader>ft", false },
-        { "<leader>fT", false },
-        { "<c-/>", false },
-      },
       opts = {
         news = {
           lazyvim = true,
