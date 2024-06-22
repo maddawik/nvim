@@ -24,5 +24,6 @@ return {
     { "<leader>2", "<cmd>Grapple select index=2<cr>", desc = "Select second tag" },
     { "<leader>3", "<cmd>Grapple select index=3<cr>", desc = "Select third tag" },
     { "<leader>4", "<cmd>Grapple select index=4<cr>", desc = "Select fourth tag" },
+    { "<leader>5", "<cmd>Grapple select index=5<cr>", desc = "Select fifth tag" },
   },
 }
