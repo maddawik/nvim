@@ -44,6 +44,14 @@ return {
       "ObsidianDailies",
     },
     opts = {
+      ui = {
+        checkboxes = {
+          [" "] = { char = "󰄱", hl_group = "DiagnosticSignHint" },
+          ["x"] = { char = "", hl_group = "DiagnosticSignOk" },
+          ["!"] = { char = "", hl_group = "DiagnosticSignWarn" },
+          ["~"] = { char = "", hl_group = "DiagnosticSignError" },
+        },
+      },
       follow_url_func = function(url)
         vim.fn.jobstart({ "open", url })
       end,
