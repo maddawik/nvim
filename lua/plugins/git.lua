@@ -8,6 +8,24 @@ return {
       -- disable all keymaps, only use current_line_blame functinoality
       on_attach = function() end,
     },
+    keys = {
+      {
+        "<leader>gh",
+        function()
+          LazyVim.lazygit.browse()
+        end,
+        mode = { "n", "v" },
+        desc = "Git Browse",
+      },
+      {
+        "<leader>gB",
+        function()
+          require("gitsigns").blame()
+        end,
+        mode = { "n", "v" },
+        desc = "Git Blame",
+      },
+    },
   },
 
   -- Web Links
