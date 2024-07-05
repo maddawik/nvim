@@ -4,9 +4,8 @@ return {
     "BufReadPre",
     "BufNewFile",
   },
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "mini.icons" },
   config = function()
-    local devicons = require("nvim-web-devicons")
     require("incline").setup({
       window = {
         padding = 0,
@@ -14,19 +13,20 @@ return {
       },
       render = function(props)
         local lazy_icons = LazyVim.config.icons
+        local mini_icons = require("mini.icons")
 
         local function get_filename()
           local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
           if filename == "" then
             filename = "[No Name]"
           end
-          local ft_icon, ft_color = devicons.get_icon_color(filename)
+          local ft_icon, ft_color = mini_icons.get("file", filename)
           local modified = vim.bo[props.buf].modified
           return {
             " ",
             { filename, gui = modified and "bold,italic" or "bold" },
             " ",
-            ft_icon and { ft_icon, " ", guibg = "none", guifg = ft_color } or "",
+            ft_icon and { ft_icon, " ", guibg = "none", group = ft_color } or "",
           }
         end
 
