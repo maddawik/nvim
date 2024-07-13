@@ -15,8 +15,8 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
-        ["<leader>p"] = { name = "+print", mode = "v" },
+      spec = {
+        { "<leader>p", name = "+print", mode = "v" },
       },
     },
   },
