@@ -27,7 +27,7 @@ return {
     "folke/which-key.nvim",
     opts = {
       spec = {
-        { "<leader>o", name = "+obsidian", icon = " " },
+        { "<leader>o", name = "+obsidian", icon = " ", mode = { "v", "n" } },
       },
     },
   },

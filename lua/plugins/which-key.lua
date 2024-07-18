@@ -1,8 +1,8 @@
 return {
   "folke/which-key.nvim",
   opts = {
-    preset = "modern",
+    preset = "helix",
     layout = { align = "center" },
-    show_help = false,
+    show_help = true,
   },
 }
