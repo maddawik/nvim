@@ -30,7 +30,7 @@ return {
     {
       "<leader>gn",
       function()
-        require("neogit").open({ cwd = require("lazyvim.util.root").get(), kind = "auto" })
+        require("neogit").open({ cwd = LazyVim.root.git(), kind = "auto" })
       end,
       desc = "Neogit (cwd)",
     },
