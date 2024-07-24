@@ -51,7 +51,7 @@ return {
       trim_on_write = true,
     },
     keys = {
-      { "<leader>ut", "<cmd>TrimToggle<cr>", desc = "Toggle Trim Whitespace" },
+      { "<leader>uW", "<cmd>TrimToggle<cr>", desc = "Toggle Trim Whitespace" },
     },
   },
 
