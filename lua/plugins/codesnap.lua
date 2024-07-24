@@ -28,6 +28,7 @@ return {
       "CodeSnapHighlight",
       "CodeSnapSave",
       "CodeSnapSaveHighlight",
+      "CodeSnapASCII",
     },
     opts = {
       mac_window_bar = true,
@@ -66,6 +67,13 @@ return {
         "<leader>pP",
         ":CodeSnapSaveHighlight<CR>",
         desc = "CodeSnap Highlight (~/codesnap)",
+        mode = "x",
+        silent = true,
+      },
+      {
+        "<leader>pa",
+        ":CodeSnapASCII<CR>",
+        desc = "CodeSnap ASCII",
         mode = "x",
         silent = true,
       },
