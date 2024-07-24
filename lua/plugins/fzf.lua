@@ -1,8 +1,9 @@
-vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "FloatBorder" })
-vim.api.nvim_set_hl(0, "FzfLuaHeaderText", { link = "Function" })
-vim.api.nvim_set_hl(0, "FzfLuaLiveSym", { link = "Error" })
-vim.api.nvim_set_hl(0, "FzfLuaBufFlagCur", { link = "String" })
-vim.api.nvim_set_hl(0, "FzfLuaPathLineNr", { link = "Exception" })
+local hl = vim.api.nvim_set_hl
+hl(0, "FzfLuaBorder", { link = "FloatBorder" })
+hl(0, "FzfLuaHeaderText", { link = "Function" })
+hl(0, "FzfLuaLiveSym", { link = "Error" })
+hl(0, "FzfLuaBufFlagCur", { link = "String" })
+hl(0, "FzfLuaPathLineNr", { link = "Exception" })
 
 return {
   "ibhagwan/fzf-lua",
