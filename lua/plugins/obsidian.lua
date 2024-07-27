@@ -45,11 +45,10 @@ return {
     },
     opts = {
       ui = {
+        enable = false,
         checkboxes = {
-          [" "] = { char = "󰄱", hl_group = "DiagnosticSignHint" },
-          ["x"] = { char = "", hl_group = "DiagnosticSignOk" },
-          ["!"] = { char = "", hl_group = "DiagnosticSignWarn" },
-          ["~"] = { char = "", hl_group = "DiagnosticSignError" },
+          [" "] = { char = "☐", hl_group = "DiagnosticSignHint" },
+          ["x"] = { char = "✔", hl_group = "DiagnosticSignOk" },
         },
       },
       follow_url_func = function(url)
