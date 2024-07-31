@@ -23,6 +23,16 @@ return {
     end,
   },
   {
+    "folke/which-key.nvim",
+    opts = {
+      icons = {
+        rules = {
+          { plugin = "telescope-symbols.nvim", icon = "󰱨 ", color = "blue" },
+        },
+      },
+    },
+  },
+  {
     "nvim-telescope/telescope-symbols.nvim",
     keys = {
       { "<leader>se", "<cmd>Telescope symbols theme=get_cursor<cr>", desc = "Emojis" },
