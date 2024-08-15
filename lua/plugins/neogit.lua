@@ -1,16 +1,5 @@
 local augroup = vim.api.nvim_create_augroup("user.neogit", {})
 
--- Neogit uses the filetype `NeogitCommitMessage` for the commit message buffer.
--- this causes some problems and has no real benefit, so we switch it back to
--- `gitcommit`.
--- https://github.com/NeogitOrg/neogit/issues/405#issuecomment-1374652332
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup,
-  desc = "Use gitcommit over NeogitCommitMessage filetype",
-  pattern = "NeogitCommitMessage",
-  command = "silent! set filetype=gitcommit buflisted",
-})
-
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup,
   desc = "Disable colorcolumn for NeogitStatus",
