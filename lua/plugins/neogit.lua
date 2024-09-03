@@ -1,7 +1,5 @@
-local augroup = vim.api.nvim_create_augroup("user.neogit", {})
-
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup,
+  group = vim.api.nvim_create_augroup("user.neogit", {}),
   desc = "Disable colorcolumn for NeogitStatus",
   pattern = { "NeogitStatus" },
   command = "silent! set colorcolumn=0",
@@ -19,16 +17,22 @@ return {
     {
       "<leader>gn",
       function()
-        require("neogit").open({ cwd = LazyVim.root.git(), kind = "auto" })
+        -- Workaround for https://github.com/NeogitOrg/neogit/issues/1392
+        local root = LazyVim.root.get()
+        local current_dir = vim.fn.getcwd()
+        if current_dir ~= root then
+          vim.fn.chdir(root)
+        end
+        require("neogit").open({ kind = "auto" })
       end,
-      desc = "Neogit (cwd)",
+      desc = "Neogit (root dir)",
     },
     {
       "<leader>gN",
       function()
         require("neogit").open({ kind = "auto" })
       end,
-      desc = "Neogit (root dir)",
+      desc = "Neogit (cwd)",
     },
   },
   opts = {
