@@ -23,21 +23,21 @@ return {
           function()
             MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
           end,
-          desc = "Open files (directory of current file)",
+          desc = "Open files (directory of current buffer)",
         },
         {
           "<leader>e",
           function()
             MiniFiles.open(LazyVim.root.get(), true)
           end,
-          desc = "Open files (cwd)",
+          desc = "Open files (root dir)",
         },
         {
           "<leader>E",
           function()
             MiniFiles.open(nil, false)
           end,
-          desc = "Open files (root dir)",
+          desc = "Open files (cwd)",
         },
       }
     end,
