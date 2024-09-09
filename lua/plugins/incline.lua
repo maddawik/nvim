@@ -11,6 +11,11 @@ return {
         padding = 0,
         margin = { horizontal = 0 },
       },
+      hide = {
+        cursorline = "focused_win",
+        -- focused_win = false,
+        -- only_win = false,
+      },
       render = function(props)
         local lazy_icons = LazyVim.config.icons
         local mini_icons = require("mini.icons")
