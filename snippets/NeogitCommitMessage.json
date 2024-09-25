@@ -4,6 +4,6 @@
       "I",
       "Issue"
     ],
-    "body": "Issue #${1} : $0"
+    "body": "Issue #${1}: $0"
   }
 }
