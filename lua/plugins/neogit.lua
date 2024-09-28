@@ -17,15 +17,9 @@ return {
     {
       "<leader>gn",
       function()
-        -- Workaround for https://github.com/NeogitOrg/neogit/issues/1392
-        local root = LazyVim.root.get()
-        local current_dir = vim.fn.getcwd()
-        if current_dir ~= root then
-          vim.fn.chdir(root)
-        end
-        require("neogit").open({ kind = "auto" })
+        require("neogit").open({ cwd = LazyVim.root.get(), kind = "auto" })
       end,
-      desc = "Neogit (root dir)",
+      desc = "Neogit (Root Dir)",
     },
     {
       "<leader>gN",
