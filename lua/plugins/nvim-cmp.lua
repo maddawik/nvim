@@ -1,5 +1,35 @@
 return {
   {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require("cmp")
+
+      -- Override the default nvim-cmp mappings from LazyVim
+      opts.mapping = {
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+
+        ["<C-Space>"] = cmp.mapping.complete({}),
+      }
+      cmp.setup({
+        window = {
+          -- completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+      })
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+        { name = "fish" },
+        { name = "tmux" },
+        { name = "git" },
+      }))
+    end,
+  },
+  {
     "mtoohey31/cmp-fish",
     dependencies = {
       "hrsh7th/nvim-cmp",
@@ -41,24 +71,6 @@ return {
           },
         }),
       })
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {},
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      cmp.setup({
-        window = {
-          -- completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-      })
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-        { name = "fish" },
-        { name = "tmux" },
-        { name = "git" },
-      }))
     end,
   },
 }
