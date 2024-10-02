@@ -7,16 +7,6 @@ end
 
 return {
   {
-    "folke/which-key.nvim",
-    opts = {
-      icons = {
-        rules = {
-          { plugin = "grapple.nvim", icon = "󰛢", color = "blue" },
-        },
-      },
-    },
-  },
-  {
     "cbochs/grapple.nvim",
     opts = {
       scope = "git", -- also try out "git_branch"
@@ -30,7 +20,6 @@ return {
       { "<leader>H", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
       { "<leader>h", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
       { "<M-h>", grapple_tag, desc = "Tag a file w/ name" },
-
       { "<leader>1", "<cmd>Grapple select index=1<cr>", desc = "Select first tag" },
       { "<leader>2", "<cmd>Grapple select index=2<cr>", desc = "Select second tag" },
       { "<leader>3", "<cmd>Grapple select index=3<cr>", desc = "Select third tag" },

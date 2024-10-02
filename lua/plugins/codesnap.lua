@@ -13,14 +13,6 @@ end
 
 return {
   {
-    "folke/which-key.nvim",
-    opts = {
-      spec = {
-        { "<leader>p", name = "+print", mode = "v" },
-      },
-    },
-  },
-  {
     "mistricky/codesnap.nvim",
     build = "make",
     cmd = {
