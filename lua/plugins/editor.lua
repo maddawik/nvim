@@ -43,15 +43,25 @@ return {
 
   -- Trim whitespace
   {
-    "cappyzawa/trim.nvim",
+    "maddawik/trim.nvim",
+    branch = "configure-notifications",
     event = {
       "BufWritePre",
     },
+    init = function()
+      LazyVim.toggle.map("<leader>uW", {
+        name = "Trim Whitespace",
+        get = function()
+          return require("trim.trimmer").is_enabled()
+        end,
+        set = function()
+          require("trim.trimmer").toggle()
+        end,
+      })
+    end,
     opts = {
       trim_on_write = true,
-    },
-    keys = {
-      { "<leader>uW", "<cmd>TrimToggle<cr>", desc = "Toggle Trim Whitespace" },
+      notifications = false,
     },
   },
 
@@ -81,16 +91,27 @@ return {
   {
     "NStefan002/screenkey.nvim",
     version = "*",
-    opts = {
-      win_opts = {
-        row = vim.o.lines - vim.o.cmdheight - 2,
-        col = vim.o.columns - 3,
-        border = "rounded",
-      },
-    },
-    keys = {
-      { "<leader>uS", "<cmd>Screenkey toggle<cr>", desc = "Toggle Screenkey" },
-    },
+    init = function()
+      LazyVim.toggle.map("<leader>uS", {
+        name = "ScreenKey",
+        get = function()
+          return require("screenkey").is_active()
+        end,
+        set = function()
+          require("screenkey").toggle()
+        end,
+      })
+    end,
+    config = function()
+      require("screenkey").setup({
+        win_opts = {
+          title = "",
+          row = vim.o.lines - vim.o.cmdheight - 2,
+          col = vim.o.columns - 3,
+          border = "rounded",
+        },
+      })
+    end,
   },
 
   -- Icon for refactoring extra

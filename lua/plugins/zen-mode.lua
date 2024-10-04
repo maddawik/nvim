@@ -2,10 +2,14 @@ return {
   "folke/zen-mode.nvim",
   dependencies = { "folke/twilight.nvim" },
   cmd = "ZenMode",
-  keys = {
-    {
-      "<leader>uz",
-      function()
+  init = function()
+    LazyVim.toggle.map("<leader>uz", {
+      name = "Zen-Mode Center",
+      icon = "󱅻 ",
+      get = function()
+        return require("zen-mode.view").is_open()
+      end,
+      set = function()
         require("zen-mode").toggle({
           plugins = {
             options = { laststatus = 3 },
@@ -14,11 +18,14 @@ return {
           },
         })
       end,
-      desc = "Zen-Mode Center",
-    },
-    {
-      "<leader>uZ",
-      function()
+    })
+    LazyVim.toggle.map("<leader>uZ", {
+      name = "Zen-Mode Focus",
+      icon = "󱅻 ",
+      get = function()
+        return require("zen-mode.view").is_open()
+      end,
+      set = function()
         require("zen-mode").toggle({
           plugins = {
             options = { laststatus = 0 },
@@ -33,8 +40,7 @@ return {
           end,
         })
       end,
-      desc = "Zen-Mode Focus",
-    },
-  },
+    })
+  end,
   opts = {},
 }
