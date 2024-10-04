@@ -92,4 +92,14 @@ return {
       { "<leader>uS", "<cmd>Screenkey toggle<cr>", desc = "Toggle Screenkey" },
     },
   },
+
+  -- Icon for refactoring extra
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>r", group = "refactor", icon = " ", mode = { "v", "n" } },
+      },
+    },
+  },
 }
