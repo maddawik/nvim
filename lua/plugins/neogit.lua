@@ -1,10 +1,3 @@
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("user.neogit", {}),
-  desc = "Disable colorcolumn for NeogitStatus",
-  pattern = { "NeogitStatus" },
-  command = "silent! set colorcolumn=0",
-})
-
 return {
   "NeogitOrg/neogit",
   dependencies = {
