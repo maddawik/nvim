@@ -1,5 +1,6 @@
 return {
-  "stevearc/overseer.nvim",
+  {
+    "stevearc/overseer.nvim",
   -- stylua: ignore
   keys = function ()
     return {
@@ -12,4 +13,11 @@ return {
       { "<leader>or", "<cmd>OverseerRun<cr>",         desc = "Run Task" },
     }
   end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      table.insert(opts.sections.lualine_x, { "overseer" })
+    end,
+  },
 }
