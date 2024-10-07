@@ -52,7 +52,7 @@ return {
       })
     end,
     opts = {
-      trim_on_write = true,
+      trim_on_write = false,
       notifications = false,
     },
   },
@@ -83,6 +83,7 @@ return {
   {
     "NStefan002/screenkey.nvim",
     version = "*",
+    enabled = false,
     init = function()
       LazyVim.toggle.map("<leader>uS", {
         name = "ScreenKey",
