@@ -3,7 +3,7 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        go = { "revive" },
+        go = { "golangcilint" },
       },
     },
   },
@@ -11,7 +11,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "revive",
+        "golangci-lint",
       },
     },
   },
