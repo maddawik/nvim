@@ -29,7 +29,7 @@ return {
       watermark = "EJ Reilly",
       bg_theme = get_random_theme(),
       breadcrumbs_separator = "/",
-      has_breadcrumbs = false,
+      has_breadcrumbs = true,
       has_line_number = true,
       save_path = "~/codesnap",
     },
