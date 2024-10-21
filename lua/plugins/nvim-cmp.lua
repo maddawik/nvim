@@ -1,6 +1,7 @@
 return {
   {
-    "hrsh7th/nvim-cmp",
+    "iguanacucumber/magazine.nvim",
+    name = "nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
 
@@ -25,21 +26,20 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         { name = "fish" },
         { name = "tmux" },
-        { name = "git" },
       }))
     end,
   },
   {
     "mtoohey31/cmp-fish",
     dependencies = {
-      "hrsh7th/nvim-cmp",
+      "iguanacucumber/magazine.nvim",
     },
     ft = "fish",
   },
   {
     "andersevenrud/cmp-tmux",
     dependencies = {
-      "hrsh7th/nvim-cmp",
+      "iguanacucumber/magazine.nvim",
     },
     event = {
       "BufReadPre",
@@ -48,7 +48,7 @@ return {
   },
   {
     "hrsh7th/cmp-cmdline",
-    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-buffer" },
+    dependencies = { "iguanacucumber/magazine.nvim", "hrsh7th/cmp-buffer" },
     event = "CmdlineEnter",
     config = function()
       local cmp = require("cmp")
