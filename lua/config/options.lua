@@ -1,4 +1,3 @@
-vim.g.maplocalleader = "-"
 vim.opt.colorcolumn = "120"
 vim.opt.pumblend = 0
 
