@@ -96,6 +96,8 @@ return {
       keyformat = {
         ["<M>"] = "󰘵 ",
         ["<C>"] = "󰘴 ",
+        ["<Space>"] = "󱁐 ",
+        ["<CR>"] = "󰘌 ",
       },
     },
     init = function()
