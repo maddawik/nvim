@@ -35,11 +35,7 @@ return {
 
   -- Trim whitespace
   {
-    "maddawik/trim.nvim",
-    branch = "configure-notifications",
-    event = {
-      "BufWritePre",
-    },
+    "cappyzawa/trim.nvim",
     init = function()
       LazyVim.toggle.map("<leader>uW", {
         name = "Trim Whitespace",
@@ -77,32 +73,40 @@ return {
   },
 
   -- Wezterm config types
-  { "justinsgithub/wezterm-types" },
+  {
+    "justinsgithub/wezterm-types",
+    event = "BufEnter .wezterm.lua",
+  },
 
   -- Screencast key utility
   {
-    "NStefan002/screenkey.nvim",
-    version = "*",
-    enabled = false,
+    "nvchad/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      timeout = 3,
+      maxkeys = 5,
+      show_count = false,
+      -- bottom-left, bottom-right, bottom-center, top-left, top-right, top-center
+      position = "bottom-center",
+
+      winopts = {
+        border = "rounded",
+      },
+
+      keyformat = {
+        ["<M>"] = "󰘵 ",
+        ["<C>"] = "󰘴 ",
+      },
+    },
     init = function()
       LazyVim.toggle.map("<leader>uS", {
-        name = "ScreenKey",
+        name = "Showkeys",
         get = function()
-          return require("screenkey").is_active()
+          return require("showkeys.state").visible
         end,
         set = function()
-          require("screenkey").toggle()
+          require("showkeys").toggle()
         end,
-      })
-    end,
-    config = function()
-      require("screenkey").setup({
-        win_opts = {
-          title = "",
-          row = vim.o.lines - vim.o.cmdheight - 2,
-          col = vim.o.columns - 3,
-          border = "rounded",
-        },
       })
     end,
   },
