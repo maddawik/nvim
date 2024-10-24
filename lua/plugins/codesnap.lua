@@ -25,7 +25,6 @@ return {
     opts = {
       mac_window_bar = true,
       title = "",
-      code_font_family = "JetBrains Mono",
       watermark = "EJ Reilly",
       bg_theme = get_random_theme(),
       breadcrumbs_separator = "/",
