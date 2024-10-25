@@ -1,10 +1,13 @@
 return {
-  { "rebelot/kanagawa.nvim" },
   { "folke/tokyonight.nvim" },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
+  },
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
     opts = {
       -- transparent_background = true,
       integrations = {
@@ -15,7 +18,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "rose-pine-moon",
     },
   },
 }

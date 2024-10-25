@@ -60,7 +60,7 @@ return {
           desc = "quit",
           icon = " ",
           icon_hl = "@variable",
-          group = "DiagnosticSignError",
+          group = "Error",
           action = "qa",
           key = "q",
         },
