@@ -92,7 +92,7 @@ return {
       local obsidian = {
         desc = "dailies",
         icon = " ",
-        icon_hl = "@variable",
+        icon_hl = "@text",
         group = "@constructor",
         action = "ObsidianDailies",
         key = "d",

@@ -35,7 +35,7 @@ return {
         {
           desc = "lazy",
           icon = "󰒲 ",
-          icon_hl = "@variable",
+          icon_hl = "@text",
           group = "@exception",
           action = "Lazy",
           key = "l",
@@ -43,7 +43,7 @@ return {
         {
           desc = "session",
           icon = " ",
-          icon_hl = "@variable",
+          icon_hl = "@text",
           group = "Special",
           action = 'lua require("persistence").load()',
           key = "s",
@@ -51,7 +51,7 @@ return {
         {
           desc = "config",
           icon = " ",
-          icon_hl = "@variable",
+          icon_hl = "@text",
           group = "Number",
           action = LazyVim.pick.config_files(),
           key = "c",
@@ -59,7 +59,7 @@ return {
         {
           desc = "quit",
           icon = " ",
-          icon_hl = "@variable",
+          icon_hl = "@text",
           group = "Error",
           action = "qa",
           key = "q",

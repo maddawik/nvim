@@ -1,9 +1,0 @@
-{
-  "Issue-referencing commit message": {
-    "prefix": [
-      "I",
-      "Issue"
-    ],
-    "body": "Issue #${1}: $0"
-  }
-}
