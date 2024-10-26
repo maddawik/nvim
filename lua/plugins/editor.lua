@@ -31,6 +31,12 @@ return {
       "BufReadPre",
       "BufNewFile",
     },
+    opts = {
+      blending = {
+        colorcode = "#26233a",
+        hlgroup = { "NonText", "bg" },
+      },
+    },
   },
 
   -- Trim whitespace

@@ -73,6 +73,7 @@ return {
           enable = false,
         },
         window = {
+          winblend = 0,
           config = {
             border = "rounded",
             row = 2,
