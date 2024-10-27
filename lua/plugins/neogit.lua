@@ -24,6 +24,7 @@ return {
   },
   opts = {
     disable_builtin_notifications = true,
+    graph_style = "kitty",
     integrations = {
       fzf_lua = true,
     },
