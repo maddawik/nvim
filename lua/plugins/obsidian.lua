@@ -93,7 +93,7 @@ return {
         desc = "dailies",
         icon = " ",
         icon_hl = "@text",
-        group = "@constructor",
+        group = "@conditional",
         action = "ObsidianDailies",
         key = "d",
       }

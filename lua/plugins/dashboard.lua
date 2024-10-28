@@ -36,7 +36,7 @@ return {
           desc = "lazy",
           icon = "󰒲 ",
           icon_hl = "@text",
-          group = "@exception",
+          group = "SpecialComment",
           action = "Lazy",
           key = "l",
         },
