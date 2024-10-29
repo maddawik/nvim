@@ -3,7 +3,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "sindrets/diffview.nvim",
-    "ibhagwan/fzf-lua",
   },
   cmd = { "Neogit" },
   keys = {
@@ -25,8 +24,5 @@ return {
   opts = {
     disable_builtin_notifications = true,
     graph_style = "kitty",
-    integrations = {
-      fzf_lua = true,
-    },
   },
 }

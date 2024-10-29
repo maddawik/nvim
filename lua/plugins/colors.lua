@@ -1,5 +1,6 @@
 return {
   { "folke/tokyonight.nvim" },
+  { "catppuccin/nvim", name = "catppuccin" },
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -7,16 +8,6 @@ return {
     opts = {
       styles = {
         transparency = true,
-      },
-    },
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    opts = {
-      -- transparent_background = true,
-      integrations = {
-        fzf = true,
       },
     },
   },
