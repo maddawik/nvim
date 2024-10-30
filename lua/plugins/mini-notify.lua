@@ -65,6 +65,11 @@ return {
         end,
         desc = "Show All Notifications",
       },
+      {
+        "<leader>um",
+        "<Cmd>messages<CR>",
+        desc = "Show All Messages",
+      },
     },
     config = function()
       local notify = require("mini.notify")
@@ -75,7 +80,7 @@ return {
         window = {
           winblend = 0,
           config = {
-            border = "rounded",
+            border = "none",
             row = 2,
           },
         },

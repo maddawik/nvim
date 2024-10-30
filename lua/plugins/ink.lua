@@ -1,10 +1,12 @@
 return {
   {
     "ahayworth/ink-syntax-vim",
+    enabled = false,
     ft = "ink",
   },
   {
     "nvimtools/none-ls.nvim",
+    enabled = false,
     ft = "ink",
     config = function()
       local nls = require("null-ls")
