@@ -78,7 +78,7 @@ return {
           enable = false,
         },
         window = {
-          winblend = 0,
+          -- winblend = 0, -- INFO: transparency setting
           config = {
             border = "none",
             row = 2,

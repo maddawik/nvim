@@ -5,11 +5,12 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
-    opts = {
-      styles = {
-        transparency = true,
-      },
-    },
+    -- INFO: transparency setting
+    -- opts = {
+    --   styles = {
+    --     transparency = true,
+    --   },
+    -- },
   },
   {
     "LazyVim/LazyVim",

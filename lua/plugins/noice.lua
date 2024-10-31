@@ -12,12 +12,13 @@ return {
     presets = {
       command_palette = false,
     },
-    views = {
-      mini = {
-        win_options = {
-          winblend = 0,
-        },
-      },
-    },
+    -- INFO: transparency setting
+    -- views = {
+    --   mini = {
+    --     win_options = {
+    --       winblend = 0,
+    --     },
+    --   },
+    -- },
   },
 }

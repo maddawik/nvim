@@ -31,12 +31,13 @@ return {
       "BufReadPre",
       "BufNewFile",
     },
-    opts = {
-      blending = {
-        colorcode = "#26233a",
-        hlgroup = { "NonText", "bg" },
-      },
-    },
+    -- INFO: transparency setting
+    -- opts = {
+    --   blending = {
+    --     colorcode = "#26233a", -- rose-pine-moon
+    --     hlgroup = { "NonText", "bg" },
+    --   },
+    -- },
   },
 
   -- Trim whitespace

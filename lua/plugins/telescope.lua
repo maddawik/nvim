@@ -160,6 +160,7 @@ return {
   },
   {
     "ANGkeith/telescope-terraform-doc.nvim",
+    optional = true, -- only apply this if the terraform extra is enabled
     keys = {
       {
         "<leader>sp",
@@ -204,6 +205,7 @@ return {
   },
   {
     "gbprod/yanky.nvim",
+    optional = true,
     opts = {
       picker = {
         telescope = {
