@@ -32,12 +32,6 @@ return {
             tmux = { enabled = true },
             twilight = { enabled = true },
           },
-          on_open = function()
-            require("incline").disable()
-          end,
-          on_close = function()
-            require("incline").enable()
-          end,
         })
       end,
     })
