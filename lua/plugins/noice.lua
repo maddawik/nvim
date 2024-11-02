@@ -17,7 +17,9 @@ return {
     },
     views = {
       mini = {
-        size = { max_height = 10 },
+        size = {
+          max_height = 8,
+        },
         -- win_options = {
         --   winblend = 0, -- INFO: transparency setting
         -- },
