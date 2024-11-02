@@ -68,6 +68,7 @@ require("lazy").setup({
     frequency = 3600,
   },
   ui = {
+    pills = false,
     border = "rounded",
     title = " Lazy 💤 ",
   },
