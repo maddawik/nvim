@@ -8,6 +8,8 @@ end
 return {
   {
     "cbochs/grapple.nvim",
+    ---@module 'grapple'
+    ---@type grapple.options
     opts = {
       scope = "git", -- also try out "git_branch"
       icons = true, -- setting to "true" requires "nvim-web-devicons"

@@ -36,5 +36,8 @@ return {
       end,
     })
   end,
+
+  ---@module 'zen-mode'
+  ---@type ZenOptions
   opts = {},
 }

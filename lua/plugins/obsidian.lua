@@ -25,6 +25,8 @@ end
 return {
   {
     "folke/which-key.nvim",
+    ---@module 'which-key'
+    ---@type wk.Opts
     opts = {
       spec = {
         { "<leader>n", group = "notes", icon = " ", mode = { "v", "n" } },
@@ -85,6 +87,7 @@ return {
   },
   {
     "nvimdev/dashboard-nvim",
+    optional = true,
     opts = function(_, opts)
       local obsidian = {
         desc = "dailies",

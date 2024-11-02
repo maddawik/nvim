@@ -30,6 +30,9 @@ return {
     -- build = function()
     --   vim.cmd("GoInstallDeps")
     -- end,
+
+    ---@module 'gopher'
+    ---@type gopher.Config
     opts = {},
   },
 }

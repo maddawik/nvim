@@ -1,5 +1,8 @@
 return {
   "folke/which-key.nvim",
+
+  ---@module 'which-key'
+  ---@type wk.Opts
   opts = {
     preset = "helix",
     layout = { align = "center" },

@@ -1,7 +1,6 @@
 return {
   {
-    "iguanacucumber/magazine.nvim",
-    name = "nvim-cmp",
+    "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
 
@@ -32,14 +31,14 @@ return {
   {
     "mtoohey31/cmp-fish",
     dependencies = {
-      "iguanacucumber/magazine.nvim",
+      "hrsh7th/nvim-cmp",
     },
     ft = "fish",
   },
   {
     "andersevenrud/cmp-tmux",
     dependencies = {
-      "iguanacucumber/magazine.nvim",
+      "hrsh7th/nvim-cmp",
     },
     event = {
       "BufReadPre",
@@ -48,7 +47,7 @@ return {
   },
   {
     "hrsh7th/cmp-cmdline",
-    dependencies = { "iguanacucumber/magazine.nvim", "hrsh7th/cmp-buffer" },
+    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-buffer" },
     event = "CmdlineEnter",
     config = function()
       local cmp = require("cmp")

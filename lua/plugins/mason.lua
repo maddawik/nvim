@@ -1,5 +1,8 @@
 return {
   "williamboman/mason.nvim",
+
+  ---@module 'mason'
+  ---@type MasonSettings
   opts = {
     ui = {
       icons = {

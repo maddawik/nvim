@@ -5,10 +5,12 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
-    -- INFO: transparency setting
+
+    ---@module 'rose-pine'
+    ---@type Options
     -- opts = {
     --   styles = {
-    --     transparency = true,
+    --     transparency = true, -- INFO: transparency setting
     --   },
     -- },
   },

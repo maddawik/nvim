@@ -1,5 +1,8 @@
 return {
   "folke/noice.nvim",
+
+  ---@module 'noice'
+  ---@type NoiceConfig
   opts = {
     cmdline = {
       view = "cmdline",
@@ -12,13 +15,13 @@ return {
     presets = {
       command_palette = false,
     },
-    -- INFO: transparency setting
-    -- views = {
-    --   mini = {
-    --     win_options = {
-    --       winblend = 0,
-    --     },
-    --   },
-    -- },
+    views = {
+      mini = {
+        size = { max_height = 10 },
+        -- win_options = {
+        --   winblend = 0, -- INFO: transparency setting
+        -- },
+      },
+    },
   },
 }

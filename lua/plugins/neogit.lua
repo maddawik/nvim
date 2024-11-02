@@ -21,6 +21,9 @@ return {
       desc = "Neogit (cwd)",
     },
   },
+
+  ---@module 'neogit'
+  ---@type NeogitConfig
   opts = {
     disable_builtin_notifications = true,
     graph_style = "kitty",

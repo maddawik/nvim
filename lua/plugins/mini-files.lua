@@ -6,6 +6,7 @@ return {
   {
     "echasnovski/mini.files",
     lazy = false,
+
     opts = function(_, opts)
       opts.mappings = {
         synchronize = "<CR>",
