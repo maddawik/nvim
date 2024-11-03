@@ -1,6 +1,47 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    optional = true,
+    dependencies = {
+      {
+        "mtoohey31/cmp-fish",
+        ft = "fish",
+      },
+      {
+        "andersevenrud/cmp-tmux",
+        event = {
+          "BufReadPre",
+          "BufNewFile",
+        },
+      },
+      {
+        "hrsh7th/cmp-cmdline",
+        dependencies = { "hrsh7th/cmp-buffer" },
+        event = "CmdlineEnter",
+        config = function()
+          local cmp = require("cmp")
+          cmp.setup.cmdline("/", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+              { name = "buffer" },
+            },
+          })
+          cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+              { name = "path" },
+            }, {
+              {
+                name = "cmdline",
+                option = {
+                  ignore_cmds = { "Man", "!" },
+                },
+              },
+            }),
+          })
+        end,
+      },
+    },
     opts = function(_, opts)
       local cmp = require("cmp")
 
@@ -26,50 +67,6 @@ return {
         { name = "fish" },
         { name = "tmux" },
       }))
-    end,
-  },
-  {
-    "mtoohey31/cmp-fish",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-    },
-    ft = "fish",
-  },
-  {
-    "andersevenrud/cmp-tmux",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-    },
-    event = {
-      "BufReadPre",
-      "BufNewFile",
-    },
-  },
-  {
-    "hrsh7th/cmp-cmdline",
-    dependencies = { "hrsh7th/nvim-cmp", "hrsh7th/cmp-buffer" },
-    event = "CmdlineEnter",
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup.cmdline("/", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
-      })
-      cmp.setup.cmdline(":", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
-          { name = "path" },
-        }, {
-          {
-            name = "cmdline",
-            option = {
-              ignore_cmds = { "Man", "!" },
-            },
-          },
-        }),
-      })
     end,
   },
 }
