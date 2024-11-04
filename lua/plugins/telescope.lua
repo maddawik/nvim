@@ -81,6 +81,14 @@ return {
           },
           sorting_strategy = "ascending",
         },
+        oldfiles = {
+          path_display = { "absolute" },
+          layout_config = {
+            prompt_position = "top",
+            -- preview_width = 0.5,
+          },
+          sorting_strategy = "ascending",
+        },
         help_tags = {
           theme = "ivy",
         },
