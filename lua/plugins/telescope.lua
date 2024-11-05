@@ -196,10 +196,10 @@ return {
     opts = {
       extensions = {
         undo = {
+          layout_strategy = "vertical",
           layout_config = {
-            preview_width = 0.6,
+            preview_height = 0.7,
           },
-          theme = "ivy",
         },
       },
     },
