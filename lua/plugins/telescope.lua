@@ -2,12 +2,14 @@ local previewers = require("telescope.previewers")
 
 local delta = previewers.new_termopen_previewer({
   get_command = function(entry)
-    print(entry.status)
-    if entry.status == " M" then -- If this is git status
-      return { "git", "-c", "core.pager=delta", "-c", "delta.side-by-side=false", "diff", entry.path }
-    end
-    -- Otherwise let's show all the commits
-    return { "git", "-c", "core.pager=delta", "-c", "delta.side-by-side=false", "diff", entry.value .. "^!" }
+    return { "git", "-c", "core.pager=delta", "diff", entry.value .. "^!" }
+  end,
+})
+
+-- Status
+local delta_status = previewers.new_termopen_previewer({
+  get_command = function(entry)
+    return { "git", "-c", "core.pager=delta", "diff", entry.path }
   end,
 })
 
@@ -19,8 +21,6 @@ local delta_bcommits = previewers.new_termopen_previewer({
       "git",
       "-c",
       "core.pager=delta",
-      "-c",
-      "delta.side-by-side=false",
       "diff",
       entry.value .. "^!",
       "--",
@@ -34,32 +34,32 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       pickers = {
-        git_status = {
-          previewer = delta,
-          theme = "ivy",
-          layout_config = {
-            preview_width = 0.6,
-          },
-        },
         git_commits = {
           previewer = delta,
-          theme = "ivy",
+          layout_strategy = "vertical",
           layout_config = {
-            preview_width = 0.6,
+            preview_height = 0.7,
+          },
+        },
+        git_status = {
+          previewer = delta_status,
+          layout_strategy = "vertical",
+          layout_config = {
+            preview_height = 0.7,
           },
         },
         git_bcommits = {
           previewer = delta_bcommits,
-          theme = "ivy",
+          layout_strategy = "vertical",
           layout_config = {
-            preview_width = 0.6,
+            preview_height = 0.7,
           },
         },
         git_bcommits_range = {
           previewer = delta_bcommits,
-          theme = "ivy",
+          layout_strategy = "vertical",
           layout_config = {
-            preview_width = 0.6,
+            preview_height = 0.7,
           },
         },
         buffers = {
@@ -77,7 +77,7 @@ return {
           path_display = { "absolute" },
           layout_config = {
             prompt_position = "top",
-            -- preview_width = 0.5,
+            preview_width = 0.5,
           },
           sorting_strategy = "ascending",
         },
@@ -85,7 +85,7 @@ return {
           path_display = { "absolute" },
           layout_config = {
             prompt_position = "top",
-            -- preview_width = 0.5,
+            preview_width = 0.5,
           },
           sorting_strategy = "ascending",
         },
