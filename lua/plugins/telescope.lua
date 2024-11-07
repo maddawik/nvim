@@ -80,6 +80,16 @@ return {
             preview_width = 0.5,
           },
           sorting_strategy = "ascending",
+          mappings = {
+            i = {
+              ["<C-e>"] = "preview_scrolling_left",
+              ["<C-y>"] = "preview_scrolling_right",
+            },
+            n = {
+              ["<C-e>"] = "preview_scrolling_left",
+              ["<C-y>"] = "preview_scrolling_right",
+            },
+          },
         },
         oldfiles = {
           path_display = { "absolute" },
@@ -88,6 +98,16 @@ return {
             preview_width = 0.5,
           },
           sorting_strategy = "ascending",
+          mappings = {
+            i = {
+              ["<C-e>"] = "preview_scrolling_left",
+              ["<C-y>"] = "preview_scrolling_right",
+            },
+            n = {
+              ["<C-e>"] = "preview_scrolling_left",
+              ["<C-y>"] = "preview_scrolling_right",
+            },
+          },
         },
         help_tags = {
           theme = "ivy",
