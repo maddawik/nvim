@@ -44,15 +44,17 @@ return {
   {
     "cappyzawa/trim.nvim",
     init = function()
-      LazyVim.toggle.map("<leader>uW", {
-        name = "Trim Whitespace",
-        get = function()
-          return require("trim.trimmer").is_enabled()
-        end,
-        set = function()
-          require("trim.trimmer").toggle()
-        end,
-      })
+      require("snacks").toggle
+        .new({
+          name = "Trim Whitespace",
+          get = function()
+            return require("trim.trimmer").is_enabled()
+          end,
+          set = function()
+            require("trim.trimmer").toggle()
+          end,
+        })
+        :map("<leader>uW")
     end,
     opts = {
       trim_on_write = false,
@@ -108,15 +110,17 @@ return {
       },
     },
     init = function()
-      LazyVim.toggle.map("<leader>uS", {
-        name = "Showkeys",
-        get = function()
-          return require("showkeys.state").visible
-        end,
-        set = function()
-          require("showkeys").toggle()
-        end,
-      })
+      require("snacks").toggle
+        .new({
+          name = "Showkeys",
+          get = function()
+            return require("showkeys.state").visible
+          end,
+          set = function()
+            require("showkeys").toggle()
+          end,
+        })
+        :map("<leader>uS")
     end,
   },
 }
