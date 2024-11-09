@@ -5,5 +5,5 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("s", [[<BS>]], [[<BS>i]])
 
 vim.keymap.set("n", "<Space>gd", function()
-  LazyVim.terminal({ "gh", "dash" })
+  Snacks.terminal({ "gh", "dash" })
 end, { desc = "GitHub Dashboard" })
