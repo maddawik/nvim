@@ -74,7 +74,7 @@ return {
           initial_mode = "normal",
         },
         find_files = {
-          path_display = { "absolute" },
+          path_display = { "smart" },
           layout_config = {
             prompt_position = "top",
             preview_width = 0.5,
@@ -92,7 +92,7 @@ return {
           },
         },
         oldfiles = {
-          path_display = { "absolute" },
+          path_display = { "smart" },
           layout_config = {
             prompt_position = "top",
             preview_width = 0.5,
@@ -183,18 +183,6 @@ return {
         end,
         desc = "Commits (range)",
         mode = { "v", "x" },
-      },
-    },
-  },
-  {
-    "ANGkeith/telescope-terraform-doc.nvim",
-    optional = true, -- only apply this if the terraform extra is enabled
-    keys = {
-      {
-        "<leader>sp",
-        "<cmd>Telescope terraform_doc<cr>",
-        desc = "Terraform Providers",
-        ft = { "terraform", "hcl" },
       },
     },
   },
