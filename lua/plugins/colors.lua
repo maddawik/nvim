@@ -43,6 +43,10 @@ return {
       -- },
 
       highlight_groups = {
+
+        DashboardHeader = { fg = "pine" },
+        DashboardFooter = { fg = "love" },
+
         -- Borderless Telescope
         TelescopeBorder = { fg = "overlay", bg = "overlay" },
         TelescopeNormal = { fg = "subtle", bg = "overlay" },

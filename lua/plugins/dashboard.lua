@@ -41,6 +41,14 @@ return {
           key = "l",
         },
         {
+          desc = "extras",
+          icon = " ",
+          icon_hl = "@text",
+          group = "Function",
+          action = "LazyExtras",
+          key = "x",
+        },
+        {
           desc = "session",
           icon = " ",
           icon_hl = "@text",
