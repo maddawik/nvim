@@ -26,7 +26,18 @@ return {
             end,
           },
         },
-        lualine_b = { "branch" },
+        lualine_b = {
+          {
+            "branch",
+            fmt = function(str)
+              if str:len() > 6 then
+                return str:sub(1, 6) .. "…"
+              else
+                return str
+              end
+            end,
+          },
+        },
 
         lualine_c = {
           LazyVim.lualine.root_dir(),
