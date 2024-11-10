@@ -83,8 +83,19 @@ return {
 
   -- Wezterm config types
   {
-    "justinsgithub/wezterm-types",
-    event = "BufEnter .wezterm.lua",
+    "folke/lazydev.nvim",
+    specs = {
+      "justinsgithub/wezterm-types",
+      event = {
+        "BufEnter .wezterm.lua",
+        "BufEnter dot_wezterm.lua",
+      },
+    },
+    opts = {
+      library = {
+        { path = "wezterm-types", modes = { "wezterm" } },
+      },
+    },
   },
 
   -- Screencast key utility
