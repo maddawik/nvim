@@ -70,6 +70,19 @@ return {
       { "<leader>S", "<esc><cmd>Sort<cr>", desc = "Sort", mode = "v" },
       { "<leader>U", "<esc><cmd>Sort u<cr>", desc = "Unique Sort", mode = "v" },
     },
+    specs = {
+      {
+        "folke/which-key.nvim",
+        ---@module 'which-key'
+        ---@type wk.Opts
+        opts = {
+          spec = {
+            { "<leader>S", icon = "󰒺 ", mode = "v" },
+            { "<leader>U", icon = "󰒺 ", mode = "v" },
+          },
+        },
+      },
+    },
   },
 
   -- Split/Join blocks of code
