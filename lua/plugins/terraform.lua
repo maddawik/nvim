@@ -15,7 +15,7 @@ return {
         "<leader>sp",
         "<cmd>Telescope terraform_doc<cr>",
         desc = "Terraform Providers",
-        ft = { "tf", "hcl" },
+        ft = { "terraform", "hcl" },
       },
     },
   },
