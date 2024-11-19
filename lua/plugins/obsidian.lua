@@ -89,19 +89,4 @@ return {
       { "<leader>n<space>", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find Note" },
     },
   },
-  {
-    "nvimdev/dashboard-nvim",
-    optional = true,
-    opts = function(_, opts)
-      local obsidian = {
-        desc = "dailies",
-        icon = " ",
-        icon_hl = "@text",
-        group = "@conditional",
-        action = "ObsidianDailies",
-        key = "d",
-      }
-      table.insert(opts.config.shortcut, 1, obsidian)
-    end,
-  },
 }

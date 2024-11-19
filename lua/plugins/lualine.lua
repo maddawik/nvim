@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-field
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -13,7 +12,7 @@ return {
       options = {
         theme = "auto",
         globalstatus = true,
-        disabled_filetypes = { statusline = { "dashboard" } },
+        disabled_filetypes = { statusline = { "snacks_dashboard" } },
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
       },

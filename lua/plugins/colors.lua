@@ -44,8 +44,12 @@ return {
 
       highlight_groups = {
 
-        DashboardHeader = { fg = "pine" },
-        DashboardFooter = { fg = "love" },
+        -- Dashboard
+        SnacksDashboardHeader = { fg = "pine" },
+        SnacksDashboardFooter = { fg = "love" },
+        SnacksDashboardDesc = { fg = "iris" },
+        SnacksDashboardSpecial = { fg = "iris" },
+        SnacksDashboardIcon = { fg = "gold" },
 
         -- Borderless Telescope
         TelescopeBorder = { fg = "overlay", bg = "overlay" },
