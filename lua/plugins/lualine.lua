@@ -89,7 +89,7 @@ return {
             color = require("lazyvim.util.ui").fg("Character"),
           },
         },
-        lualine_y = { "fileformat", "progress" },
+        lualine_y = { "progress" },
         lualine_z = { "location" },
       },
       extensions = { "lazy" },
