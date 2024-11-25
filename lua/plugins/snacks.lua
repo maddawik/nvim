@@ -1,17 +1,35 @@
-local function pickQuote()
-  -- Small chance of encouragement from Master Miller
-  math.randomseed(os.time())
-  if math.random() > 0.98 then
-    return [[
-Sometimes in combat or when you're near the end of your rope,
+local quotes = {
+  [[
+"Sometimes in combat or when you're near the end of your rope,
 You can see things that normally aren't there or shouldn't be there.
-Relax. It's not a bug. It's just the mysteries of the human mind.
+Relax. It's not a bug. It's just the mysteries of the human mind."
 
 • Master Miller
-]]
-  else
-    return ""
-  end
+]],
+  [[
+"There are only two hard things in Computer Science: cache invalidation and naming things."
+
+• Phil Karlton
+]],
+  [[
+"Adding manpower to a late software project, makes it later."
+
+• Frederick P. Brooks Jr
+]],
+  [[
+"Every good work of software starts by scratching a developer’s personal itch."
+
+• Eric S. Raymond
+]],
+}
+
+local function randNum()
+  math.randomseed(os.time())
+  return math.random()
+end
+
+local function getQuote()
+  return quotes[math.random(#quotes)]
 end
 
 return {
@@ -71,8 +89,9 @@ return {
         { section = "startup", padding = 1 },
         -- footer
         {
+          enabled = randNum() > 0.90,
           ---@class snacks.dashboard.Text
-          text = { pickQuote(), hl = "Special", align = "center" },
+          text = { getQuote(), hl = "Special", align = "center" },
         },
       },
     },
