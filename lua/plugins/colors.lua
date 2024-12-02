@@ -45,11 +45,14 @@ return {
       highlight_groups = {
 
         -- Dashboard
+        SnacksDashboardDesc = { fg = "text" },
+        SnacksDashboardFooter = { fg = "muted" },
         SnacksDashboardHeader = { fg = "pine" },
-        SnacksDashboardFooter = { fg = "love" },
-        SnacksDashboardDesc = { fg = "iris" },
+        SnacksDashboardIcon = { fg = "subtle" },
+        SnacksDashboardKey = { fg = "iris" },
         SnacksDashboardSpecial = { fg = "iris" },
-        SnacksDashboardIcon = { fg = "gold" },
+        SnacksDashboardTitle = { fg = "subtle" },
+        SnacksDashboardFile = { fg = "foam" },
 
         -- Borderless Telescope
         TelescopeBorder = { fg = "overlay", bg = "overlay" },
