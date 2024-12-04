@@ -36,9 +36,20 @@ return {
         end
       end
 
+      -- Yank in register full path of entry under cursor
+      local yank_path = function()
+        local path = (MiniFiles.get_fs_entry() or {}).path
+        if path == nil then
+          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
+        end
+        vim.fn.setreg(vim.v.register, path)
+        vim.notify("Copied path to clipboard", vim.log.levels.INFO)
+      end
+
       vim.api.nvim_create_autocmd("User", {
         pattern = "MiniFilesBufferCreate",
         callback = function(args)
+          vim.keymap.set("n", "gy", yank_path, { buffer = args.data.buf_id, desc = "Yank path" })
           vim.keymap.set("n", "gs", files_grug_far_replace, { buffer = args.data.buf_id, desc = "Search in directory" })
         end,
       })
@@ -50,21 +61,27 @@ return {
         {
           "\\",
           function()
-            MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
+            if not MiniFiles.close() then
+              MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
+            end
           end,
           desc = "Open files (directory of current buffer)",
         },
         {
           "<leader>e",
           function()
-            MiniFiles.open(LazyVim.root.get(), true)
+            if not MiniFiles.close() then
+              MiniFiles.open(LazyVim.root.get(), true)
+            end
           end,
           desc = "Open files (root dir)",
         },
         {
           "<leader>E",
           function()
-            MiniFiles.open(nil, false)
+            if not MiniFiles.close() then
+              MiniFiles.open(nil, false)
+            end
           end,
           desc = "Open files (cwd)",
         },
