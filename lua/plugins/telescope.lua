@@ -74,7 +74,7 @@ return {
           initial_mode = "normal",
         },
         find_files = {
-          path_display = { "smart" },
+          -- path_display = { "smart" },
           layout_config = {
             prompt_position = "top",
             preview_width = 0.5,
