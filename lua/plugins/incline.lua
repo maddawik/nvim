@@ -103,7 +103,7 @@ return {
           { get_mini_diff() },
           { get_grapple_status() },
           { get_filename() },
-          group = props.focused and "ColorColumn" or "SignColumn",
+          group = props.focused and "BufferCurrent" or "BufferInactive",
         }
       end,
     })
