@@ -110,42 +110,4 @@ return {
       },
     },
   },
-
-  -- Screencast key utility
-  {
-    "nvchad/showkeys",
-    cmd = "ShowkeysToggle",
-    opts = {
-      timeout = 3,
-      maxkeys = 5,
-      show_count = false,
-      -- bottom-left, bottom-right, bottom-center, top-left, top-right, top-center
-      position = "bottom-center",
-
-      winopts = {
-        border = "rounded",
-      },
-
-      keyformat = {
-        ["<M>"] = "󰘵 ",
-        ["<C>"] = "󰘴 ",
-        ["<Space>"] = "󱁐 ",
-        ["<CR>"] = "󰘌 ",
-        ["<Tab>"] = "󰌒 ",
-      },
-    },
-    init = function()
-      require("snacks").toggle
-        .new({
-          name = "Showkeys",
-          get = function()
-            return require("showkeys.state").visible
-          end,
-          set = function()
-            require("showkeys").toggle()
-          end,
-        })
-        :map("<leader>uS")
-    end,
-  },
 }
