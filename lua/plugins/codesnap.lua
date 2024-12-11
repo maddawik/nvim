@@ -23,14 +23,15 @@ return {
       "CodeSnapASCII",
     },
     opts = {
-      mac_window_bar = true,
+      mac_window_bar = false,
       title = "",
       watermark = "EJ Reilly",
       bg_theme = get_random_theme(),
       breadcrumbs_separator = "/",
       has_breadcrumbs = true,
       has_line_number = true,
-      save_path = "~/codesnap",
+      bg_x_padding = 50,
+      bg_y_padding = 40,
     },
     keys = {
       {
