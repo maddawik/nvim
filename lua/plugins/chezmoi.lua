@@ -7,9 +7,7 @@ return {
       vim.g["chezmoi#use_tmp_buffer"] = 1
       vim.g["chezmoi#source_dir_path"] = vim.fn.expand("~") .. "/.local/share/chezmoi"
       vim.keymap.set("n", "<leader>sz", function()
-        require("telescope.builtin").find_files({
-          cwd = vim.fn.expand("~") .. "/.local/share/chezmoi/home/",
-        })
+        Snacks.dashboard.pick("files", { cwd = vim.fn.expand("~") .. "/.local/share/chezmoi/home/" })
       end, { silent = true, desc = "Chezmoi Config" })
     end,
   },

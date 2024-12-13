@@ -43,7 +43,7 @@ return {
           {
             require("lazy.status").updates,
             cond = require("lazy.status").has_updates,
-            color = LazyVim.ui.fg("Special"),
+            color = { fg = Snacks.util.color("Special") },
           },
           "%=",
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
@@ -54,19 +54,19 @@ return {
           {
             function() return require("noice").api.status.command.get() end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = LazyVim.ui.fg("Statement"),
+            color = { fg = Snacks.util.color("Statement") },
           },
           -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get():gsub("recording", " ") end,
             cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-            color = LazyVim.ui.fg("Constant"),
+            color = { fg = Snacks.util.color("Constant") },
           },
           -- stylua: ignore
           {
             function() return "  " .. require("dap").status() end,
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
-            color = LazyVim.ui.fg("Debug"),
+            color = { fg = Snacks.util.color("Debug") },
           },
           {
             -- Lsp server name
@@ -75,7 +75,7 @@ return {
               local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
               local clients = vim.lsp.get_clients()
               if next(clients) == nil then
-                return "No LSP"
+                return "N/A"
               end
               for _, client in ipairs(clients) do
                 local filetypes = client.config.filetypes
@@ -86,7 +86,7 @@ return {
               return msg
             end,
             icon = " ",
-            color = require("lazyvim.util.ui").fg("Character"),
+            color = { fg = Snacks.util.color("Character") },
           },
         },
         lualine_y = { "progress" },

@@ -103,7 +103,7 @@ return {
           { get_mini_diff() },
           { get_grapple_status() },
           { get_filename() },
-          group = props.focused and "BufferCurrent" or "BufferInactive",
+          group = props.focused and "CursorColumn" or "FoldColumn",
         }
       end,
     })
