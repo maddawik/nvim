@@ -5,6 +5,6 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("s", [[<BS>]], [[<BS>i]])
 
 -- Pick a plugin file
-vim.keymap.set("n", "<leader>fp", function()
+vim.keymap.set("n", "<leader>fl", function()
   LazyVim.pick("files", { cwd = vim.fn.expand("~") .. "/.local/share/nvim/lazy/" })()
 end, { desc = "Find Plugin File", silent = true })
