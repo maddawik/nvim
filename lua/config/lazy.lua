@@ -23,8 +23,6 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      ---@module 'lazyvim'
-      ---@type LazyVimConfig
       opts = {
         news = {
           lazyvim = true,
@@ -59,7 +57,7 @@ require("lazy").setup({
   diff = {
     cmd = "terminal_git",
   },
-  install = { colorscheme = { "rose-pine-moon", "default" } },
+  install = { colorscheme = { "tokyonight-moon", "default" } },
   checker = {
     enabled = true,
     notify = false,
