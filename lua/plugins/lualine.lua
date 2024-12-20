@@ -1,3 +1,15 @@
+local function get_venv(variable)
+  local venv = os.getenv(variable)
+  if venv ~= nil and string.find(venv, "/") then
+    local orig_venv = venv
+    for w in orig_venv:gmatch("([^/]+)") do
+      venv = w
+    end
+    venv = string.format("%s", venv)
+  end
+  return venv
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
@@ -67,6 +79,15 @@ return {
             function() return "  " .. require("dap").status() end,
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = { fg = Snacks.util.color("Debug") },
+          },
+          -- stylua: ignore
+          {
+            function()
+              local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV") or "NO ENV"
+              return " " .. venv
+            end,
+            cond = function() return vim.bo.filetype == "python" end,
+            color = { fg = Snacks.util.color("Special") },
           },
           {
             -- Lsp server name
