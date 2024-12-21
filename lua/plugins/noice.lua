@@ -3,7 +3,13 @@ return {
 
   ---@module 'noice'
   ---@type NoiceConfig
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
+    lsp = {
+      signature = {
+        enabled = false,
+      },
+    },
     cmdline = {
       view = "cmdline",
     },

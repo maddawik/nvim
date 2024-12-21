@@ -1,16 +1,19 @@
 return {
   "saghen/blink.cmp",
-  optional = true,
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    windows = {
+    completion = {
       documentation = {
-        border = "rounded",
+        window = {
+          border = "rounded",
+        },
       },
     },
-
+    signature = {
+      enabled = true,
+    },
     keymap = {
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide" },
