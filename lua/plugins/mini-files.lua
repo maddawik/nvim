@@ -14,11 +14,14 @@ return {
       opts.options = {
         use_as_default_explorer = true,
       }
-      local files_grug_far_replace = function(path)
+      local files_grug_far_replace = function()
         local MiniFiles = require("mini.files")
         -- works only if cursor is on the valid file system entry
-        local cur_entry_path = MiniFiles.get_fs_entry().path
-        local prefills = { paths = vim.fs.dirname(cur_entry_path) }
+        local grug_path = (MiniFiles.get_fs_entry() or {}).path
+        if grug_path == nil then
+          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
+        end
+        local prefills = { paths = vim.fs.dirname(grug_path) }
 
         local grug_far = require("grug-far")
 
@@ -38,12 +41,31 @@ return {
 
       -- Yank in register full path of entry under cursor
       local yank_path = function()
-        local path = (MiniFiles.get_fs_entry() or {}).path
-        if path == nil then
+        local yank_path = (require("mini.files").get_fs_entry() or {}).path
+        if yank_path == nil then
           return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
         end
-        vim.fn.setreg(vim.v.register, path)
+        vim.fn.setreg(vim.v.register, yank_path)
         vim.notify("Copied path to clipboard", vim.log.levels.INFO)
+      end
+
+      local function grapple_nametag()
+        local grapple_path = (require("mini.files").get_fs_entry() or {}).path
+        if grapple_path == nil then
+          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
+        end
+        local input = vim.fn.input("Enter tag name: ")
+        if input ~= "" then
+          require("grapple").tag({ name = input, path = grapple_path })
+        end
+      end
+
+      local grapple_tag = function()
+        local grapple_path = (require("mini.files").get_fs_entry() or {}).path
+        if grapple_path == nil then
+          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
+        end
+        require("grapple").toggle({ path = grapple_path })
       end
 
       vim.api.nvim_create_autocmd("User", {
@@ -51,6 +73,8 @@ return {
         callback = function(args)
           vim.keymap.set("n", "gy", yank_path, { buffer = args.data.buf_id, desc = "Yank path" })
           vim.keymap.set("n", "gs", files_grug_far_replace, { buffer = args.data.buf_id, desc = "Search in directory" })
+          vim.keymap.set("n", "gh", grapple_tag, { buffer = args.data.buf_id, desc = "Tag file" })
+          vim.keymap.set("n", "gH", grapple_nametag, { buffer = args.data.buf_id, desc = "Tag file w/ name" })
         end,
       })
     end,
