@@ -1,9 +1,20 @@
 return {
   "saghen/blink.cmp",
-
+  dependencies = {
+    "mtoohey31/cmp-fish",
+  },
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    sources = {
+      default = { "fish" },
+      providers = {
+        fish = {
+          name = "fish",
+          module = "blink.compat.source",
+        },
+      },
+    },
     completion = {
       documentation = {
         window = {
