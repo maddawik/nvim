@@ -58,6 +58,7 @@ return {
         if input ~= "" then
           require("grapple").tag({ name = input, path = grapple_path })
         end
+        require("mini.files").synchronize()
       end
 
       local grapple_tag = function()
@@ -66,6 +67,7 @@ return {
           return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
         end
         require("grapple").toggle({ path = grapple_path })
+        require("mini.files").synchronize()
       end
 
       vim.api.nvim_create_autocmd("User", {
@@ -77,6 +79,15 @@ return {
           vim.keymap.set("n", "gH", grapple_nametag, { buffer = args.data.buf_id, desc = "Tag file w/ name" })
         end,
       })
+
+      local my_prefix = function(fs_entry)
+        if require("grapple").exists({ path = fs_entry.path }) then
+          return "󰛢 ", "Constant"
+        end
+        return MiniFiles.default_prefix(fs_entry)
+      end
+
+      opts.content = { prefix = my_prefix }
     end,
     -- Passing a function that returns the table of keymaps overrides any of the
     -- defaults that LazyVim has (<leader>fm, and <leader>fM in this case)
