@@ -83,8 +83,11 @@ return {
           -- stylua: ignore
           {
             function()
-              local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV") or "NO ENV"
-              return " " .. venv
+              local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV") or ""
+              if venv ~= "" then
+                return " " .. venv
+              end
+              return ""
             end,
             cond = function() return vim.bo.filetype == "python" end,
             color = { fg = Snacks.util.color("Special") },
