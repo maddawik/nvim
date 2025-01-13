@@ -1,13 +1,13 @@
 return {
   -- Scoped buffers
-  {
-    "tiagovla/scope.nvim",
-    config = true,
-    event = {
-      "BufReadPre",
-      "BufNewFile",
-    },
-  },
+  -- {
+  --   "tiagovla/scope.nvim",
+  --   config = true,
+  --   event = {
+  --     "BufReadPre",
+  --     "BufNewFile",
+  --   },
+  -- },
 
   -- Better splits and tmux navigation
   {
