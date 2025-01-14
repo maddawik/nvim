@@ -66,6 +66,7 @@ return {
       new_notes_location = "notes_subdir",
       daily_notes = {
         folder = "inbox/dailies",
+        template = "daily.md",
       },
       workspaces = get_local_workspaces(),
       disable_frontmatter = function(file)
