@@ -87,6 +87,16 @@ communication structures of these organizations."
 
 • Melvin E. Conway
 ]],
+  [[
+“It is not enough for code to work.”
+
+• Uncle Bob
+]],
+  [[
+“Truth can only be found in one place: the code.”
+
+• Uncle Bob
+]],
 }
 
 local function randNum()
