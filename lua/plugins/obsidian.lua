@@ -46,9 +46,6 @@ return {
       "ObsidianDailies",
     },
     opts = {
-      picker = {
-        name = "fzf-lua",
-      },
       ui = {
         enable = false,
         checkboxes = {
