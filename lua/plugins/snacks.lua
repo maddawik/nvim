@@ -97,6 +97,20 @@ communication structures of these organizations."
 
 • Uncle Bob
 ]],
+  [[
+“It was a "jump to conclusions" mat!
+
+You see it would be this mat, that you would put on the floor
+and it would have different - conclusions - on it,
+that you could jump to.”
+
+• Tom Smykowski
+]],
+  [[
+“FINKLE IS EINHORN, EINHORN IS FINKLE!”
+
+• Ace Ventura
+]],
 }
 
 local function randNum()
