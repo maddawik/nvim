@@ -41,22 +41,4 @@ return {
       },
     },
   },
-  {
-    "folke/which-key.nvim",
-    ---@module 'which-key'
-    ---@type wk.Opts
-    opts = {
-      icons = {
-        rules = {
-          { plugin = "telescope-symbols.nvim", icon = " ", color = "blue" },
-        },
-      },
-    },
-  },
-  {
-    "nvim-telescope/telescope-symbols.nvim",
-    keys = {
-      { "<leader>se", "<cmd>Telescope symbols theme=get_cursor<cr>", desc = "Emojis" },
-    },
-  },
 }

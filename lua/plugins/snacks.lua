@@ -128,6 +128,15 @@ end
 
 return {
   "folke/snacks.nvim",
+  keys = {
+    {
+      "<leader>se",
+      function()
+        Snacks.dashboard.pick("icons")
+      end,
+      desc = "Search Emojis",
+    },
+  },
   ---@module "snacks"
   ---@class snacks.Config
   opts = {
@@ -136,6 +145,13 @@ return {
         top = 1,
       },
       style = "compact",
+    },
+    picker = {
+      previewers = {
+        git = {
+          native = true,
+        },
+      },
     },
     dashboard = {
       preset = {
