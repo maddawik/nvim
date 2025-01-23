@@ -99,6 +99,13 @@ return {
         end,
       })
 
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesActionRename",
+        callback = function(event)
+          Snacks.rename.on_rename_file(event.data.from, event.data.to)
+        end,
+      })
+
       local my_prefix = function(fs_entry)
         if require("grapple").exists({ path = fs_entry.path }) then
           return "󰛢 ", "Constant"
