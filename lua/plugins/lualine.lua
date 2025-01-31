@@ -52,11 +52,6 @@ return {
 
         lualine_c = {
           LazyVim.lualine.root_dir(),
-          {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = { fg = Snacks.util.color("Special") },
-          },
           "%=",
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
