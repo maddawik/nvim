@@ -1,6 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    lazy = true,
     opts = {
       defaults = {
         set_env = {
