@@ -16,7 +16,7 @@ return {
     optional = true, -- only apply this if the terraform extra is enabled
     keys = {
       {
-        "<leader>sp",
+        "<leader>sP",
         "<cmd>Telescope terraform_doc<cr>",
         desc = "Terraform Providers",
         ft = { "terraform", "hcl" },
