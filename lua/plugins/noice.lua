@@ -1,6 +1,5 @@
 return {
   "folke/noice.nvim",
-
   ---@module 'noice'
   ---@type NoiceConfig
   ---@diagnostic disable-next-line: missing-fields

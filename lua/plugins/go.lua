@@ -25,11 +25,6 @@ return {
       return LazyVim.has_extra("lang.go")
     end,
     ft = "go",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "mfussenegger/nvim-dap",
-    },
     keys = {
       { "<leader>ce", "<cmd>GoIfErr<cr>", ft = "go", desc = "Go Error Snippet" },
     },

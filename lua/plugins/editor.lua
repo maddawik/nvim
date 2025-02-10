@@ -1,14 +1,4 @@
 return {
-  -- Scoped buffers
-  -- {
-  --   "tiagovla/scope.nvim",
-  --   config = true,
-  --   event = {
-  --     "BufReadPre",
-  --     "BufNewFile",
-  --   },
-  -- },
-
   -- Better splits and tmux navigation
   {
     "mrjones2014/smart-splits.nvim",

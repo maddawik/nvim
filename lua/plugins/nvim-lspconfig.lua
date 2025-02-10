@@ -1,6 +1,5 @@
 return {
   "nvim-lspconfig",
-
   ---@module 'lspconfig'
   ---@type PluginLspOpts
   opts = {

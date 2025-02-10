@@ -128,24 +128,6 @@ return {
           end,
           desc = "Open files (directory of current buffer)",
         },
-        {
-          "<leader>e",
-          function()
-            if not MiniFiles.close() then
-              MiniFiles.open(LazyVim.root.get(), true)
-            end
-          end,
-          desc = "Open files (root dir)",
-        },
-        {
-          "<leader>E",
-          function()
-            if not MiniFiles.close() then
-              MiniFiles.open(nil, false)
-            end
-          end,
-          desc = "Open files (cwd)",
-        },
       }
     end,
   },
