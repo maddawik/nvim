@@ -32,8 +32,8 @@ return {
         lualine_a = {
           {
             "mode",
-            fmt = function(str)
-              return str:sub(1, 1) .. string.lower(str:sub(2))
+            fmt = function()
+              return "󰽯 "
             end,
           },
         },
