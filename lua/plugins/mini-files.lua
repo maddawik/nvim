@@ -70,24 +70,6 @@ return {
         require("mini.files").synchronize()
       end
 
-      local open_file_explorer = function()
-        local MiniFiles = require("mini.files")
-        -- works only if cursor is on the valid file system entry
-        local file_path = (MiniFiles.get_fs_entry() or {}).path
-        if file_path == nil then
-          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
-        end
-        local cmd = "open " .. vim.fs.dirname(file_path)
-
-        vim.fn.jobstart(cmd, {
-          on_exit = function(_, exit_code)
-            if exit_code ~= 0 then
-              vim.notify("No bueno " .. exit_code .. ": " .. cmd)
-            end
-          end,
-        })
-      end
-
       vim.api.nvim_create_autocmd("User", {
         pattern = "MiniFilesBufferCreate",
         callback = function(args)
@@ -95,7 +77,6 @@ return {
           vim.keymap.set("n", "gs", files_grug_far_replace, { buffer = args.data.buf_id, desc = "Search in directory" })
           vim.keymap.set("n", "gh", grapple_tag, { buffer = args.data.buf_id, desc = "Tag file" })
           vim.keymap.set("n", "gH", grapple_nametag, { buffer = args.data.buf_id, desc = "Tag file w/ name" })
-          vim.keymap.set("n", "go", open_file_explorer, { buffer = args.data.buf_id, desc = "Open in File Explorer" })
         end,
       })
 
