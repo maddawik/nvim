@@ -113,6 +113,11 @@ that you could jump to.”
 
 • Ace Ventura
 ]],
+  [[
+“Perfect is the enemy of good.”
+
+• Voltaire
+]],
 }
 
 M.rand_num = function()
