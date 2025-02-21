@@ -34,7 +34,11 @@ return {
     },
   },
   {
-    "epwalsh/obsidian.nvim",
+    "SjB/obsidian.nvim",
+    branch = "snacks-picker",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
     version = "*",
     event = {
       "BufReadPre " .. personal_vault .. "/**.md",
@@ -46,6 +50,9 @@ return {
       "ObsidianDailies",
     },
     opts = {
+      picker = {
+        name = "snacks.pick",
+      },
       ui = {
         enable = false,
         checkboxes = {

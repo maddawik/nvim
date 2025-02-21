@@ -3,6 +3,9 @@ return {
   ---@module "snacks"
   ---@class snacks.Config
   opts = {
+    image = {
+      enabled = true,
+    },
     notifier = {
       margin = {
         top = 1,
