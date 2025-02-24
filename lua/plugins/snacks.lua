@@ -21,6 +21,9 @@ return {
     },
     picker = {
       previewers = {
+        diff = {
+          native = true,
+        },
         git = {
           native = true,
         },
