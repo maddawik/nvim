@@ -3,6 +3,13 @@ return {
   ---@module "snacks"
   ---@class snacks.Config
   opts = {
+    zen = {
+      win = {
+        backdrop = {
+          transparent = false,
+        },
+      },
+    },
     image = {
       enabled = true,
     },
