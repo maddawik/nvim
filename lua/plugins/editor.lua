@@ -84,19 +84,16 @@ return {
     opts = { use_default_keymaps = false, max_join_length = 150 },
   },
 
-  -- Wezterm config types
+  -- Copilot Chat
   {
-    "folke/lazydev.nvim",
-    specs = {
-      "justinsgithub/wezterm-types",
-      event = {
-        "BufEnter .wezterm.lua",
-        "BufEnter dot_wezterm.lua",
-      },
-    },
+    "CopilotC-Nvim/CopilotChat.nvim",
+    optional = true,
     opts = {
-      library = {
-        { path = "wezterm-types", modes = { "wezterm" } },
+      mappings = {
+        reset = {
+          normal = "<C-x>",
+          insert = "<C-x>",
+        },
       },
     },
   },
