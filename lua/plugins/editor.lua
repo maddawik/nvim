@@ -89,6 +89,7 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     optional = true,
     opts = {
+      model = "o3-mini", -- ':CopilotChatModels'
       mappings = {
         reset = {
           normal = "<C-x>",
