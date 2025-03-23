@@ -3,7 +3,7 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        go = { "revive" },
+        go = { "golangcilint" },
       },
     },
   },
@@ -11,7 +11,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "revive",
+        "golangci-lint",
         "iferr",
         "gomodifytags",
         "gotests",
@@ -39,6 +39,9 @@ return {
   },
   {
     "fredrikaverpil/godoc.nvim",
+    enabled = function()
+      return LazyVim.has_extra("lang.go")
+    end,
     version = "*",
     keys = {
       { "<leader>ch", "<cmd>GoDoc<cr>", ft = "go", desc = "Go Documentation" },
@@ -64,6 +67,11 @@ return {
                 { win = "list", border = "none" },
               },
               { win = "preview", border = "rounded", width = 0.7 }, -- Preview window takes up 70% of the width
+            },
+          },
+          win = {
+            preview = {
+              wo = { number = false, relativenumber = false },
             },
           },
         },
