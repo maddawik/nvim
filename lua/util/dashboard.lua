@@ -118,6 +118,11 @@ that you could jump to.”
 
 • Voltaire
 ]],
+  [[
+“I like parties, I like fun. I want to live in a hamburger bun.”
+
+• Casey Tatum and his brother
+]],
 }
 
 M.rand_num = function()
