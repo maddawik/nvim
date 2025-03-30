@@ -123,6 +123,11 @@ that you could jump to.”
 
 • Casey Tatum and his brother
 ]],
+  [[
+“Make the test work quickly, committing whatever sins necessary in process.”
+
+• Kent Beck
+]],
 }
 
 M.rand_num = function()
