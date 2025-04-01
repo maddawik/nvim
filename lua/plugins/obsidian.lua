@@ -34,9 +34,9 @@ return {
     },
   },
   {
-    "SjB/obsidian.nvim",
-    branch = "snacks-picker",
+    "obsidian-nvim/obsidian.nvim",
     dependencies = {
+      "saghen/blink.compat", -- blink support
       "nvim-lua/plenary.nvim",
     },
     version = "*",
@@ -78,15 +78,9 @@ return {
       end,
       completion = {
         nvim_cmp = false,
+        blink = true,
       },
     },
-    config = function(_, opts)
-      require("obsidian").setup(opts)
-      local cmp = require("cmp")
-      cmp.register_source("obsidian", require("cmp_obsidian").new())
-      cmp.register_source("obsidian_new", require("cmp_obsidian_new").new())
-      cmp.register_source("obsidian_tags", require("cmp_obsidian_tags").new())
-    end,
     keys = {
       { "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Backlinks" },
       { "<leader>oe", "<cmd>ObsidianExtractNote<CR>", desc = "Extract Note", mode = "v" },
@@ -105,33 +99,6 @@ return {
       { "<leader>od", "<cmd>ObsidianDailies<CR>", desc = "Open Dailies" },
       { "<leader>ow", "<cmd>ObsidianWorkspace<CR>", desc = "Change Workspace" },
       { "<leader>o<space>", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find Note" },
-    },
-  },
-  {
-    "saghen/blink.cmp",
-    dependencies = {
-      "saghen/blink.compat",
-      branch = "main",
-      version = false,
-    },
-    opts = {
-      sources = {
-        default = { "obsidian", "obsidian_new", "obsidian_tags" },
-        providers = {
-          obsidian = {
-            name = "obsidian",
-            module = "blink.compat.source",
-          },
-          obsidian_new = {
-            name = "obsidian_new",
-            module = "blink.compat.source",
-          },
-          obsidian_tags = {
-            name = "obsidian_tags",
-            module = "blink.compat.source",
-          },
-        },
-      },
     },
   },
 }
