@@ -31,16 +31,6 @@ return {
         auto_show = true,
         auto_show_delay_ms = 200,
       }
-      opts.sources = {
-        compat = {},
-        default = { "lsp", "fish", "path", "snippets", "buffer" },
-        providers = {
-          fish = {
-            name = "fish",
-            module = "blink.compat.source",
-          },
-        },
-      }
       opts.keymap = {
         ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-e>"] = { "hide" },
