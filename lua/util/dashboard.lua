@@ -54,38 +54,38 @@ M.headers = {
 
 M.quotes = {
   [[
-"LIQUID!"
+“LIQUID!”
 
 • Solid Snake
 ]],
   [[
-"Sometimes in combat or when you're near the end of your rope,
+“Sometimes in combat or when you're near the end of your rope,
 You can see things that normally aren't there or shouldn't be there.
-Relax. It's not a bug. It's just the mysteries of the human mind."
+Relax. It's not a bug. It's just the mysteries of the human mind.”
 
 • Master Miller
 ]],
   [[
-"There are only two hard things in Computer Science:
-cache invalidation and naming things."
+“There are only two hard things in Computer Science:
+cache invalidation and naming things.”
 
 • Phil Karlton
 ]],
   [[
-"Adding manpower to a late software project, makes it later."
+“Adding manpower to a late software project, makes it later.”
 
 • Frederick P. Brooks Jr
 ]],
   [[
-"Every good work of software starts
-by scratching a developer’s personal itch."
+“Every good work of software starts
+by scratching a developer’s personal itch.”
 
 • Eric S. Raymond
 ]],
   [[
-"Organizations which design systems are constrained
+“Organizations which design systems are constrained
 to produce designs which are copies of the
-communication structures of these organizations."
+communication structures of these organizations.”
 
 • Melvin E. Conway
 ]],
