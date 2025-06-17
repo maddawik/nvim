@@ -89,6 +89,7 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     optional = true,
     opts = {
+      model = "claude-3.5-sonnet",
       mappings = {
         reset = {
           normal = "<C-x>",
