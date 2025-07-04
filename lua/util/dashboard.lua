@@ -128,6 +128,11 @@ that you could jump to.”
 
 • Kent Beck
 ]],
+  [[
+“This shouldn't change anything on your box.”
+
+• Andrew Riehm
+]],
 }
 
 M.rand_num = function()
