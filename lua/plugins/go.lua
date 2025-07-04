@@ -1,3 +1,5 @@
+local lzv = require("lazyvim.util")
+
 return {
   {
     "mfussenegger/nvim-lint",
@@ -22,7 +24,7 @@ return {
   {
     "olexsmir/gopher.nvim",
     enabled = function()
-      return LazyVim.has_extra("lang.go")
+      return lzv.has_extra("lang.go")
     end,
     ft = "go",
     keys = {
@@ -40,7 +42,7 @@ return {
   {
     "fredrikaverpil/godoc.nvim",
     enabled = function()
-      return LazyVim.has_extra("lang.go")
+      return lzv.has_extra("lang.go")
     end,
     version = "*",
     keys = {
