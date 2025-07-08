@@ -49,34 +49,11 @@ return {
         vim.notify("Copied path to clipboard", vim.log.levels.INFO)
       end
 
-      local function grapple_nametag()
-        local grapple_path = (require("mini.files").get_fs_entry() or {}).path
-        if grapple_path == nil then
-          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
-        end
-        local input = vim.fn.input("Enter tag name: ")
-        if input ~= "" then
-          require("grapple").tag({ name = input, path = grapple_path })
-        end
-        require("mini.files").synchronize()
-      end
-
-      local grapple_tag = function()
-        local grapple_path = (require("mini.files").get_fs_entry() or {}).path
-        if grapple_path == nil then
-          return vim.notify("Cursor is not on valid entry", vim.log.levels.WARN)
-        end
-        require("grapple").toggle({ path = grapple_path })
-        require("mini.files").synchronize()
-      end
-
       vim.api.nvim_create_autocmd("User", {
         pattern = "MiniFilesBufferCreate",
         callback = function(args)
           vim.keymap.set("n", "gy", yank_path, { buffer = args.data.buf_id, desc = "Yank path" })
           vim.keymap.set("n", "gs", files_grug_far_replace, { buffer = args.data.buf_id, desc = "Search in directory" })
-          vim.keymap.set("n", "gh", grapple_tag, { buffer = args.data.buf_id, desc = "Tag file" })
-          vim.keymap.set("n", "gH", grapple_nametag, { buffer = args.data.buf_id, desc = "Tag file w/ name" })
         end,
       })
 
@@ -86,15 +63,6 @@ return {
           Snacks.rename.on_rename_file(event.data.from, event.data.to)
         end,
       })
-
-      local my_prefix = function(fs_entry)
-        if require("grapple").exists({ path = fs_entry.path }) then
-          return "󰛢 ", "Constant"
-        end
-        return MiniFiles.default_prefix(fs_entry)
-      end
-
-      opts.content = { prefix = my_prefix }
     end,
     -- Passing a function that returns the table of keymaps overrides any of the
     -- defaults that LazyVim has (<leader>fm, and <leader>fM in this case)

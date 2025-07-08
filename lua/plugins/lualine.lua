@@ -18,6 +18,8 @@ return {
     local lualine_require = require("lualine_require")
     lualine_require.require = require
 
+    local icons = require("lazyvim.config").icons
+
     vim.o.laststatus = vim.g.lualine_laststatus
 
     return {
@@ -52,6 +54,16 @@ return {
 
         lualine_c = {
           LazyVim.lualine.root_dir(),
+
+          {
+            "diagnostics",
+            symbols = {
+              error = icons.diagnostics.Error,
+              warn = icons.diagnostics.Warn,
+              info = icons.diagnostics.Info,
+              hint = icons.diagnostics.Hint,
+            },
+          },
           "%=",
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
@@ -75,6 +87,14 @@ return {
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = { fg = Snacks.util.color("Debug") },
           },
+          {
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+          },
           -- stylua: ignore
           {
             function()
@@ -87,6 +107,7 @@ return {
             cond = function() return vim.bo.filetype == "python" end,
             color = { fg = Snacks.util.color("Special") },
           },
+
           {
             -- Lsp server name
             function()

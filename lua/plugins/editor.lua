@@ -21,35 +21,6 @@ return {
       "BufReadPre",
       "BufNewFile",
     },
-    -- INFO: transparency setting
-    -- opts = {
-    --   blending = {
-    --     colorcode = "#26233a", -- rose-pine-moon
-    --     hlgroup = { "NonText", "bg" },
-    --   },
-    -- },
-  },
-
-  -- Trim whitespace
-  {
-    "cappyzawa/trim.nvim",
-    init = function()
-      require("snacks").toggle
-        .new({
-          name = "Trim Whitespace",
-          get = function()
-            return require("trim.trimmer").is_enabled()
-          end,
-          set = function()
-            require("trim.trimmer").toggle()
-          end,
-        })
-        :map("<leader>uW")
-    end,
-    opts = {
-      trim_on_write = false,
-      notifications = false,
-    },
   },
 
   -- Smart sort
@@ -89,7 +60,7 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     optional = true,
     opts = {
-      model = "claude-3.5-sonnet",
+      model = "gpt-4.1",
       mappings = {
         reset = {
           normal = "<C-x>",

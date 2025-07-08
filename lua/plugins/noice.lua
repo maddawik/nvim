@@ -25,9 +25,6 @@ return {
         size = {
           max_height = 8,
         },
-        -- win_options = {
-        --   winblend = 0, -- INFO: transparency setting
-        -- },
       },
     },
   },
