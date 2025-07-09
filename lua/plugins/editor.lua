@@ -66,6 +66,10 @@ return {
           normal = "<C-x>",
           insert = "<C-x>",
         },
+        accept_diff = {
+          normal = "<C-a>",
+          insert = "<C-a>",
+        },
       },
     },
   },
