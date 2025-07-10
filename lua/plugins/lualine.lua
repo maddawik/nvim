@@ -70,11 +70,11 @@ return {
         },
         lualine_x = {
           -- stylua: ignore
-          {
-            function() return require("noice").api.status.command.get() end,
-            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-            color = { fg = Snacks.util.color("Statement") },
-          },
+          -- {
+          --   function() return require("noice").api.status.command.get() end,
+          --   cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+          --   color = { fg = Snacks.util.color("Statement") },
+          -- },
           -- stylua: ignore
           {
             function() return require("noice").api.status.mode.get():gsub("recording", " ") end,
@@ -128,8 +128,12 @@ return {
             icon = " ",
             color = { fg = Snacks.util.color("Character") },
           },
+          "filesize",
         },
-        lualine_y = { "progress" },
+        lualine_y = {
+          "fileformat",
+          "encoding",
+        },
         lualine_z = { "location" },
       },
       extensions = { "lazy" },
