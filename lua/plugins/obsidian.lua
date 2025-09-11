@@ -50,15 +50,15 @@ return {
       "Obsidian",
     },
     opts = {
+      checkbox = {
+        order = { " ", "x" },
+      },
+
       picker = {
         name = "snacks.pick",
       },
       ui = {
         enable = false,
-        checkboxes = {
-          [" "] = { char = "☐", hl_group = "DiagnosticSignHint" },
-          ["x"] = { char = "✔", hl_group = "DiagnosticSignOk" },
-        },
       },
       follow_url_func = function(url)
         vim.fn.jobstart({ "open", url })
