@@ -60,9 +60,6 @@ return {
       ui = {
         enable = false,
       },
-      follow_url_func = function(url)
-        vim.fn.jobstart({ "open", url })
-      end,
       templates = {
         subdir = "templates",
       },
