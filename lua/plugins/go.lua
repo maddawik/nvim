@@ -26,6 +26,9 @@ return {
     enabled = function()
       return lzv.has_extra("lang.go")
     end,
+    cond = function()
+      return vim.fn.executable("go") == 1
+    end,
     ft = "go",
     keys = {
       { "<leader>ce", "<cmd>GoIfErr<cr>", ft = "go", desc = "Go Error Snippet" },
@@ -43,6 +46,9 @@ return {
     "fredrikaverpil/godoc.nvim",
     enabled = function()
       return lzv.has_extra("lang.go")
+    end,
+    cond = function()
+      return vim.fn.executable("go") == 1
     end,
     version = "*",
     keys = {
