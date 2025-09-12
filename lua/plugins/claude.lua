@@ -1,9 +1,14 @@
+---@diagnostic disable: missing-fields
 return {
   "coder/claudecode.nvim",
   dependencies = { "folke/snacks.nvim" },
+  ---@module 'claudecode.nvim'
+  ---@type ClaudeCodeConfig
   opts = {
+    diff_opts = {
+      open_in_new_tab = true,
+    },
     terminal = {
-
       split_width_percentage = 0.40,
     },
   },
