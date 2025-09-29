@@ -1,14 +1,9 @@
-local function get_venv(variable)
-  local venv = os.getenv(variable)
-  if venv ~= nil and string.find(venv, "/") then
-    local orig_venv = venv
-    for w in orig_venv:gmatch("([^/]+)") do
-      venv = w
-    end
-    venv = string.format("%s", venv)
-  end
-  return venv
-end
+local copilot_icons = {
+  Error = { " ", "DiagnosticError" },
+  Inactive = { " ", "MsgArea" },
+  Warning = { " ", "DiagnosticWarn" },
+  Normal = { LazyVim.config.icons.kinds.Copilot, "Special" },
+}
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -95,39 +90,24 @@ return {
               removed = icons.git.removed,
             },
           },
-          -- stylua: ignore
+
+          -- sidekick status
           {
             function()
-              local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV") or ""
-              if venv ~= "" then
-                return " " .. venv
-              end
-              return ""
+              local status = require("sidekick.status").get()
+              return status and vim.tbl_get(copilot_icons, status.kind, 1)
             end,
-            cond = function() return vim.bo.filetype == "python" end,
-            color = { fg = Snacks.util.color("Special") },
+            color = function()
+              local status = require("sidekick.status").get()
+              local hl = status and (status.busy and "DiagnosticWarn" or vim.tbl_get(copilot_icons, status.kind, 2))
+              return { fg = Snacks.util.color(hl) }
+            end,
+            cond = function()
+              local status = require("sidekick.status") --ok test
+              return status.get() ~= nil
+            end,
           },
 
-          {
-            -- Lsp server name
-            function()
-              local msg = ""
-              local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
-              local clients = vim.lsp.get_clients()
-              if next(clients) == nil then
-                return "N/A"
-              end
-              for _, client in ipairs(clients) do
-                local filetypes = client.config.filetypes
-                if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                  msg = client.name .. " " .. msg
-                end
-              end
-              return msg
-            end,
-            icon = " ",
-            color = { fg = Snacks.util.color("Character") },
-          },
           { "filesize", padding = { left = 0, right = 1 } },
         },
         lualine_y = {
