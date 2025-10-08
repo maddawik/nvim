@@ -49,6 +49,18 @@ return {
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
           { icon = " ", key = "x", desc = "Extras", action = ":LazyExtras" },
+          {
+            icon = " ",
+            key = "c",
+            desc = "Config",
+            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+          },
+          {
+            icon = " ",
+            key = "z",
+            desc = "Chezmoi",
+            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.expand('~') .. '/.local/share/chezmoi/home/'})",
+          },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
       },
@@ -56,7 +68,6 @@ return {
       sections = {
         { section = "header" },
         { section = "keys", gap = 0, padding = 1 },
-        { section = "startup", padding = 1 },
         -- footer
         {
           enabled = require("util.dashboard").rand_num() > 0.90,
