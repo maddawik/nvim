@@ -9,12 +9,11 @@ return {
       { "<tab>", LazyVim.cmp.map({ "ai_nes" }, "<tab>"), mode = { "n" }, expr = true },
       { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
       {
-        "<leader>ax",
+        "<leader>ai",
         function()
-          require("sidekick.nes").clear()
+          require("sidekick.cli").toggle({ name = "claude", focus = true })
         end,
-        mode = { "n", "x" },
-        desc = "Sidekick Clear NES",
+        desc = "Sidekick Toggle Claude",
       },
       {
         "<leader>ad",
@@ -29,13 +28,6 @@ return {
           require("sidekick.cli").send({ msg = "{diagnostics_all}" })
         end,
         desc = "Send Workspace Diagnostics",
-      },
-      {
-        "<leader>ai",
-        function()
-          require("sidekick.cli").toggle({ name = "claude", focus = true })
-        end,
-        desc = "Sidekick Toggle Claude",
       },
       {
         "<leader>af",
@@ -53,12 +45,27 @@ return {
         desc = "Send Position",
       },
       {
+        "<leader>ab",
+        function()
+          require("sidekick.cli").send({ msg = "{file}" })
+        end,
+        desc = "Send Buffer",
+      },
+      {
         "<leader>ap",
         function()
           require("sidekick.cli").prompt()
         end,
         mode = { "n", "x" },
         desc = "Sidekick Select Prompt",
+      },
+      {
+        "<leader>ac",
+        function()
+          require("sidekick.nes").clear()
+        end,
+        mode = { "n", "x" },
+        desc = "Sidekick Clear NES",
       },
       {
         "<leader>at",
