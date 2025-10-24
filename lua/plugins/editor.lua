@@ -1,4 +1,16 @@
 return {
+  -- Bufferline
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        style_preset = require("bufferline").style_preset.minimal,
+        diagnostics = false,
+        show_buffer_close_icons = false,
+      },
+    },
+  },
+
   -- Better splits and tmux navigation
   {
     "mrjones2014/smart-splits.nvim",
