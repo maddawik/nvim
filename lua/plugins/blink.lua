@@ -27,13 +27,7 @@ return {
       ["<C-b>"] = { "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 
-      ["<C-j>"] = {
-        "snippet_forward",
-        function() -- sidekick next edit suggestion
-          return require("sidekick").nes_jump_or_apply()
-        end,
-        "fallback",
-      },
+      ["<C-j>"] = { "snippet_forward", "fallback" },
       ["<C-k>"] = { "snippet_backward", "fallback" },
     },
   },
