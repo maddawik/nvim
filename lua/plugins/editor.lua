@@ -1,14 +1,13 @@
 return {
-  -- Bufferline
+  -- Simpler bufferline
   {
     "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        style_preset = require("bufferline").style_preset.minimal,
-        diagnostics = false,
-        show_buffer_close_icons = false,
-      },
-    },
+    enabled = false,
+  },
+  {
+    "nvim-mini/mini.tabline",
+    event = "BufReadPre ",
+    opts = {},
   },
 
   -- Better splits and tmux navigation
@@ -23,15 +22,6 @@ return {
       { "<C-Down>", "<cmd>SmartResizeDown<CR>", desc = "Resize Down", mode = { "n", "t" } },
       { "<C-Left>", "<cmd>SmartResizeLeft<CR>", desc = "Resize Left", mode = { "n", "t" } },
       { "<C-Right>", "<cmd>SmartResizeRight<CR>", desc = "Resize Right", mode = { "n", "t" } },
-    },
-  },
-
-  -- Super smart column status
-  {
-    "Bekaboo/deadcolumn.nvim",
-    event = {
-      "BufReadPre",
-      "BufNewFile",
     },
   },
 
