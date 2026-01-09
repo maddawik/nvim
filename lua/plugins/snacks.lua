@@ -66,15 +66,8 @@ return {
       },
       width = 30,
       sections = {
-        { section = "header" },
         { section = "keys", gap = 0, padding = 1 },
-        { section = "startup", padding = 1 },
-        -- footer
-        {
-          enabled = require("util.dashboard").rand_num() > 0.90,
-          ---@class snacks.dashboard.Text
-          text = { require("util.dashboard").get_quote(), hl = "Comment", align = "center" },
-        },
+        { text = { require("util.dashboard").get_quote(), hl = "Comment", align = "center" } },
       },
     },
   },
