@@ -89,7 +89,7 @@ return {
       { "<leader>on", "<cmd>Obsidian new<CR>", desc = "New Note" },
       { "<leader>oN", "<cmd>Obsidian new_from_template<CR>", desc = "New Templated Note" },
       { "<leader>oo", "<cmd>Obsidian open<CR>", desc = "Open Obsidian" },
-      { "<leader>op", "<cmd>Obsidian pasteImg<CR>", desc = "Paste Image" },
+      { "<leader>op", "<cmd>Obsidian paste_img<CR>", desc = "Paste Image" },
       { "<leader>or", "<cmd>Obsidian rename<CR>", desc = "Rename Note" },
       { "<leader>og", "<cmd>Obsidian search<CR>", desc = "Grep" },
       { "<leader>ot", "<cmd>Obsidian tags<CR>", desc = "Search Tags" },

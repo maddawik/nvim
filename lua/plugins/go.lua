@@ -20,7 +20,7 @@ return {
     },
   },
   {
-    "olexsmir/gopher.nvim",
+    "ray-x/go.nvim",
     enabled = function()
       return require("lazyvim.util").has_extra("lang.go")
     end,
@@ -28,12 +28,15 @@ return {
       return vim.fn.executable("go") == 1
     end,
     ft = "go",
+
     keys = {
       { "<leader>ce", "<cmd>GoIfErr<cr>", ft = "go", desc = "Go Error Snippet" },
     },
 
-    ---@module 'gopher'
-    ---@type gopher.Config
-    opts = {},
+    opts = {
+      lsp_inlay_hints = {
+        enable = false,
+      },
+    },
   },
 }

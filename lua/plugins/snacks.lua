@@ -38,7 +38,7 @@ return {
     },
     dashboard = {
       preset = {
-        header = require("util.dashboard").get_header(),
+        header = false,
         keys = {
           {
             icon = " ",
@@ -68,6 +68,7 @@ return {
       sections = {
         { section = "header" },
         { section = "keys", gap = 0, padding = 1 },
+        { section = "startup", padding = 1 },
         -- footer
         {
           enabled = require("util.dashboard").rand_num() > 0.90,
