@@ -53,7 +53,6 @@ return {
       checkbox = {
         order = { " ", "x" },
       },
-
       picker = {
         name = "snacks.pick",
       },
@@ -70,13 +69,16 @@ return {
         template = "daily.md",
       },
       workspaces = get_local_workspaces(),
-      disable_frontmatter = function(file)
-        return string.find(file, "-presenterm.md") -- Don't format presenations
-      end,
+      frontmatter = {
+        enabled = function(file)
+          return string.find(file, "-presenterm.md") -- Don't format presenations
+        end,
+      },
       completion = {
         nvim_cmp = false,
         blink = true,
       },
+      legacy_commands = false,
     },
     keys = {
       { "<leader>ob", "<cmd>Obsidian backlinks<CR>", desc = "Backlinks" },
