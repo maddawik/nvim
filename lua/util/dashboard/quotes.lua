@@ -79,6 +79,11 @@ that you could jump to.”
 
 • Andrew Riehm
 ]],
+  [[
+“A fool with a tool is still a fool.”
+
+• Grady Booch
+]],
 }
 
 return M
