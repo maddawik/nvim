@@ -21,9 +21,6 @@ return {
   },
   {
     "ray-x/go.nvim",
-    enabled = function()
-      return require("lazyvim.util").has_extra("lang.go")
-    end,
     cond = function()
       return vim.fn.executable("go") == 1
     end,
